@@ -10,12 +10,12 @@ const Life = require('./life');
 const sources = ['PHB'];
 
 const cClass = Class(sources);
-const cRace = Race(sources);
-const cBackground = Background(sources);
+const race = Race(sources);
+const background = Background.random(sources);
 
 console.log('');
-console.log('Background:', cBackground);
-console.log('Race:', cRace);
+console.log('Background:', background.name);
+console.log('Race:', race);
 console.log('Class:', cClass);
 
 console.log('');
@@ -26,7 +26,7 @@ if (!Family.knewParents()) {
   console.log('You didn\'t know who your parents were.')
 }
 
-const parents = Family.parents(cRace);
+const parents = Family.parents(race);
 if (parents.mother === parents.father) {
   console.log(`Your mother and father were both ${parents.mother}s.`);
 } else {
@@ -34,12 +34,15 @@ if (parents.mother === parents.father) {
   // TODO: Elaborate on parents.
 }
 
-const siblings = Family.siblings(cRace);
+const siblings = Family.siblings(race);
 if (siblings === 0) {
   console.log('You were an only child.');
 } else {
   console.log(`You had ${siblings} siblings.`);
-  // TODO: Info about siblings.
+  for (n = 1; n <= siblings; n++) {
+    console.log(`Sibling ${n} is a ${Life.gender()} who is ${Life.age()} you.`)
+    // TODO: More info about siblings.
+  }
 }
 
 const raisedBy = Family.raisedBy();
@@ -48,7 +51,13 @@ const home = Family.home(lifestyle[1]);
 console.log(`You were raised by ${raisedBy} and had a ${lifestyle[0].toLowerCase()} lifestyle, living ${home}.`);
 console.log(Life.childhood());
 
-// TODO: Reason for background.
+console.log('');
+const bgReason = Background.reason(background);
+if (bgReason) {
+  console.log(`You became a ${background.name} because ${bgReason}`);
+}
+
+// TODO: Ideals, bonds and flaws.
 
 // TODO: Reason for class training.
 

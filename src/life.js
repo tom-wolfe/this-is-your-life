@@ -1,6 +1,17 @@
 const random = require('./random');
 
 module.exports = {
+  gender: function () {
+    return (random.percent() > 50) ? 'male' : 'female';
+  },
+  age: function () {
+    const r = random.dice('2d6');
+    switch (true) {
+      case r < 3: return 'the same age as';
+      case r < 8: return 'older than';
+      case r < 13: return 'younger than';
+    }
+  },
   childhood: function () {
     const r = random.dice('3d6');
     switch (true) {
