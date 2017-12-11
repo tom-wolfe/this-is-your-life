@@ -31,6 +31,7 @@ if (parents.mother === parents.father) {
   console.log(`Your mother and father were both ${parents.mother}s.`);
 } else {
   console.log(`Your mother was a ${parents.mother}, but your father was a ${parents.father}.`);
+  // TODO: Elaborate on parents.
 }
 
 const siblings = Family.siblings(cRace);
@@ -38,6 +39,7 @@ if (siblings === 0) {
   console.log('You were an only child.');
 } else {
   console.log(`You had ${siblings} siblings.`);
+  // TODO: Info about siblings.
 }
 
 const raisedBy = Family.raisedBy();
@@ -46,3 +48,8 @@ const home = Family.home(lifestyle[1]);
 console.log(`You were raised by ${raisedBy} and had a ${lifestyle[0].toLowerCase()} lifestyle, living ${home}.`);
 console.log(Life.childhood());
 
+// TODO: Reason for background.
+
+// TODO: Reason for class training.
+
+// TODO: Life Events.
