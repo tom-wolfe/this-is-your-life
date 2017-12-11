@@ -9,7 +9,7 @@ const sources = [
 ];
 
 function get(s) {
-  if (s === 'ALL' || s.indexOf('ALL') > -1) {
+  if (s === 'ALL' || s.includes('ALL')) {
     return sources;
   } else {
     return s;

@@ -12,10 +12,11 @@ const halfRaces = {
 
 function halfElf() {
   const r = random.dice('1d8');
+  console.log(r);
   switch (true) {
     case r < 6: return ['Elf', 'Human'];
     case r === 6: return ['Elf', 'Half-Elf'];
-    case r === 7: options = ['Human', 'Half-Elf']
+    case r === 7: return ['Human', 'Half-Elf']
     case r === 8: return ['Half-Elf', 'Half-Elf']
   }
 }
@@ -47,14 +48,11 @@ module.exports = {
   parents: function (race) {
     let options = [race, race];
     if (Object.keys(halfRaces).includes(race)) {
-      output = halfRaces[race]();
+      options = halfRaces[race]();
     }
 
     // 50/50 chance to switch races.
     if (random.percent() > 50) { options.reverse(); }
-    return {
-      mother: options[0],
-      father: options[1],
-    }
+    return { mother: options[0], father: options[1] };
   }
 }

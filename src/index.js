@@ -25,5 +25,9 @@ if (!knewParents) {
   console.log('You didn\'t know who your parents were.')
 } else {
   const parents = Family.parents(cRace);
-  console.log(`Your mother was a ${parents.mother} and your father was a ${parents.father}`);
+  if (parents.mother === parents.father) {
+    console.log(`Your mother and father were both ${parents.mother}s.`);
+  } else {
+    console.log(`Your mother was a ${parents.mother}, but your father was a ${parents.father}.`);
+  }
 }
