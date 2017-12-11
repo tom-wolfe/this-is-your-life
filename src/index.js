@@ -5,6 +5,7 @@ const Race = require('./race');
 const Background = require('./background');
 const Family = require('./family');
 const Birth = require('./birth');
+const Life = require('./life');
 
 const sources = ['PHB'];
 
@@ -31,3 +32,17 @@ if (parents.mother === parents.father) {
 } else {
   console.log(`Your mother was a ${parents.mother}, but your father was a ${parents.father}.`);
 }
+
+const siblings = Family.siblings(cRace);
+if (siblings === 0) {
+  console.log('You were an only child.');
+} else {
+  console.log(`You had ${siblings} siblings.`);
+}
+
+const raisedBy = Family.raisedBy();
+const lifestyle = Family.lifestyle();
+const home = Family.home(lifestyle[1]);
+console.log(`You were raised by ${raisedBy} and had a ${lifestyle[0].toLowerCase()} lifestyle, living ${home}.`);
+console.log(Life.childhood());
+

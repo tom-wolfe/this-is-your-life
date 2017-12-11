@@ -25,9 +25,8 @@ module.exports = {
       case r < 97: return 'in the Feywild';
       case r < 98: return 'in the Shadowfell';
       case r < 99: return 'on the Astral Plane or the Ethereal Plane';
-      case r < 100: return 'on an inner plane of your choice'; // TODO: Check planes
-      case r < 101: return 'on an outer plane of your choice'; // TODO: Check planes
+      case r < 100: return 'on an inner plane of your choice';
+      case r < 101: return 'on an outer plane of your choice';
     }
   }
-  // TODO: Strange event.
 }
