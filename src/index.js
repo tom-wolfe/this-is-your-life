@@ -7,7 +7,7 @@ const Family = require('./family');
 const Birth = require('./birth');
 const Life = require('./life');
 
-const sources = ['PHB'];
+const sources = ['PHB', 'VGM', 'XGE'];
 
 const cClass = Class(sources);
 const race = Race(sources);
@@ -40,7 +40,7 @@ if (siblings === 0) {
 } else {
   console.log(`You had ${siblings} siblings.`);
   for (n = 1; n <= siblings; n++) {
-    console.log(`Sibling ${n} is a ${Life.gender()} who is ${Life.age()} you.`)
+    console.log(`Sibling ${n} is a ${Life.gender()} who is ${Life.relativeAge()} you.`)
     // TODO: More info about siblings.
   }
 }
@@ -56,6 +56,10 @@ const bgReason = Background.reason(background);
 if (bgReason) {
   console.log(`You became a ${background.name} because ${bgReason}`);
 }
+
+console.log('');
+const age = Life.age();
+console.log(`You are ${age} years old.`);
 
 // TODO: Ideals, bonds and flaws.
 

@@ -5,6 +5,17 @@ module.exports = {
     return (random.percent() > 50) ? 'male' : 'female';
   },
   age: function () {
+    const r = random.percent();
+    switch (true) {
+      case r < 21: return random.numberBetween(16, 20);
+      case r < 60: return random.numberBetween(21, 30);
+      case r < 70: return random.numberBetween(31, 40);
+      case r < 90: return random.numberBetween(41, 50);
+      case r < 100: return random.numberBetween(51, 60);
+      default: return random.numberBetween(61, 100);
+    }
+  },
+  relativeAge: function () {
     const r = random.dice('2d6');
     switch (true) {
       case r < 3: return 'the same age as';
@@ -22,6 +33,16 @@ module.exports = {
       case r < 16: return 'You had several friends, and your childhood was generally a happy one.';
       case r < 18: return 'You always found it easy to make friends and you loved being around people.';
       case r < 19: return 'Everyone knew who you were, and you had friends everywhere you went.';
+    }
+  },
+  eventCount: function (age) {
+    switch (true) {
+      case age < 21: return 1;
+      case age < 60: return random.dice('1d4');
+      case age < 70: return random.dice('1d6');
+      case age < 90: return random.dice('1d8');
+      case age < 100: return random.dice('1d10');
+      default: return random.dice('1d12');
     }
   }
 }
