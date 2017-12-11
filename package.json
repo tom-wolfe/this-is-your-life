@@ -1,0 +1,35 @@
+{
+  "name": "this-is-your-life",
+  "version": "1.0.0",
+  "description": "Generate character backstories based on the Xanathar's Guide to Everything 'This Is Your Life' tables.",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "jasmine --config=jasmine.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trwolfe13/this-is-your-life.git"
+  },
+  "keywords": [
+    "xanathar's",
+    "guide",
+    "to",
+    "everything",
+    "dungeons",
+    "dragons",
+    "D&D",
+    "5e",
+    "XGE",
+    "XGtE"
+  ],
+  "author": "Thomas R. Wolfe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trwolfe13/this-is-your-life/issues"
+  },
+  "homepage": "https://github.com/trwolfe13/this-is-your-life#readme",
+  "devDependencies": {
+    "jasmine": "^2.8.0"
+  }
+}
