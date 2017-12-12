@@ -159,7 +159,7 @@ const backgrounds = {
       traits: [
         'I know a story relevant to almost every situation.',
         'Whenever I come to a new place, I collect local rumors and spread gossip.',
-        'I\'m a hopeless romantic, always searching for that &quot;special someone.&quot;',
+        'I\'m a hopeless romantic, always searching for that "special someone".',
         'Nobody stays angry at me or around me for long, since I can defuse any amount of tension.',
         'I love a good insult, even one directed at me.',
         'I get bitter if I\'m not the center of attention.',
