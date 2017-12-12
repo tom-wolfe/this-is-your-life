@@ -71,7 +71,7 @@ module.exports = {
   },
   absentParent: function() {
     switch(random.dice('1d4')) {
-      case 1: return 'is dead. ' + Life.causeOfDeath();
+      case 1: return `is dead. ${Life.causeOfDeath()}.`;
       case 2: return 'was imprisoned, enslaved, or otherwise taken away.';
       case 3: return 'abandoned you.';
       case 4: return 'disappeared to an unknown fate.';

@@ -52,14 +52,14 @@ function boon() {
 
 function crime() {
   switch (random.dice('1d8')) {
-    case 1: return 'Murder';
-    case 2: return 'Theft';
-    case 3: return 'Burglary';
-    case 4: return `Assault`;
-    case 5: return 'Smuggling';
-    case 6: return 'Kidnapping';
-    case 7: return 'Extortion';
-    case 8: return 'Counterfeiting.';
+    case 1: return 'murder';
+    case 2: return 'theft';
+    case 3: return 'burglary';
+    case 4: return `assault`;
+    case 5: return 'smuggling';
+    case 6: return 'kidnapping';
+    case 7: return 'extortion';
+    case 8: return 'counterfeiting.';
   }
 }
 
@@ -246,7 +246,7 @@ function relationship() {
   const r = random.dice('3d4');
   switch (true) {
     case r < 5: return 'You are hostile towards each other.';
-    case r < 11: return 'You get on well.';
+    case r < 11: return 'You get on with each other.';
     case r < 13: return 'You are indifferent to each other.';
   }
 }

@@ -28,10 +28,10 @@ if (!config.class) { config.class = Class.random(config.sources); }
 if (!config.alignment) { config.alignment = Life.alignment(); }
 
 console.log('This Is Your Life!');
-console.log('');
+
+console.log('\n:: Overview ::');
 console.log(`You are a ${config.age} year old ${config.alignment} ${config.race.name} ${config.background.name} adventuring as a ${config.class.name}.`);
 
-console.log('');
 const bgReason = Background.reason(config.background);
 if (bgReason) {
   console.log(`You became a ${config.background.name} because ${bgReason}`);
@@ -40,12 +40,11 @@ const cReason = Class.reason(config.class);
 console.log(`You became a ${config.class.name} because ${cReason}`);
 
 const raceOther = Race.other(config.race);
-if (raceOther) {
-  console.log('');
+if (raceOther.length > 0) {
+  console.log('\n:: Racial ::');
   raceOther.forEach(o => console.log(o[0] + ':', o[1]));
 }
-
-console.log('');
+console.log('\n:: Background ::');
 console.log('Trait:', Background.trait(config.background));
 console.log('Ideal:', Background.ideal(config.background));
 console.log('Bond:', Background.bond(config.background));
@@ -53,16 +52,12 @@ console.log('Flaw:', Background.flaw(config.background));
 Background.other(config.background).forEach(o => console.log(o[0] + ':', o[1]));
 
 const classOther = Class.other(config.class);
-if (classOther) {
-  console.log('');
+if (classOther.length > 0) {
+  console.log('\n:: Class ::');
   classOther.forEach(o => console.log(o[0] + ':', o[1]));
 }
 
-
-console.log('');
-console.log('Along your travels you found', Item.trinket() + '.');
-
-console.log('');
+console.log('\n:: Family ::');
 console.log('You were born', Birth.place() + '.');
 
 config.knewParents = Family.knewParents();
@@ -80,6 +75,7 @@ if (!config.knewParents) {
   console.log(`Your father ${Life.occupation()}.`);
 }
 
+console.log('\n:: Childhood ::');
 config.raisedBy = Family.raisedBy(config.knewParents);
 const lifestyle = Family.lifestyle();
 const home = Family.home(lifestyle[1]);
@@ -100,15 +96,17 @@ if (siblings === 0) {
   console.log('');
   console.log(`You had ${siblings} sibling${siblings === 1 ? '' : 's'}.`);
   for (n = 1; n <= siblings; n++) {
-    console.log(`A ${Life.relativeAge()} ${Family.siblingSex()} who ${Life.occupation()}. They are ${Life.status()} ${Life.relationship()}`)
+    console.log(` - a ${Life.relativeAge()} ${Family.siblingSex()} who ${Life.occupation()}. They are ${Life.status()} ${Life.relationship()}`)
   }
 }
 
-console.log('');
+console.log('\n:: Events ::');
 const lifeEvents = Life.eventCount(config.age);
-console.log(`You have had ${lifeEvents} major events in your life:`);
+console.log(`You have had ${lifeEvents} major event${lifeEvents === 1 ? '' : 's'} in your life:`);
 events = [];
-for (n = 0; n < lifeEvents; n++) {
-  const event = Life.event(events);
-  console.log(event);
+for (n = 1; n <= lifeEvents; n++) {
+  console.log(`${n}) ${Life.event(events)}`);
 }
+
+console.log('')
+console.log(`Currently in your possession you have ${Item.trinket()}`);
