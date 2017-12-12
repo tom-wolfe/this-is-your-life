@@ -48,6 +48,11 @@ Background.other(config.background).forEach(o => {
 });
 
 console.log('');
+Class.other(config.class).forEach(o => {
+  console.log(o[0] + ':', o[1]);
+});
+
+console.log('');
 console.log('You were born', Birth.place() + '.');
 
 if (!Family.knewParents()) {

@@ -21,7 +21,7 @@ function adventure() {
 function arcane() {
   switch (random.dice('1d10')) {
     case 1: return 'You were charmed or frightened by a spell.';
-    case 2: return 'You were injured by the effect ofa spell.';
+    case 2: return 'You were injured by the effect of a spell.';
     case 3: return 'You witnessed a powerful spell being cast by a cleric, a druid, a sorcerer, a warlock, or a wizard.';
     case 4: return 'You drank a potion';
     case 5: return 'You found a spell scroll and succeeded in casting the Spell it contained.';
