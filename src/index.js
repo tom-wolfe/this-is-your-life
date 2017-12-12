@@ -38,6 +38,12 @@ if (bgReason) {
 const cReason = Class.reason(config.class);
 console.log(`You became a ${config.class.name} because ${cReason}`);
 
+console.log('');
+console.log('Trait:', Background.trait(config.background));
+console.log('Ideal:', Background.ideal(config.background));
+console.log('Bond:', Background.bond(config.background));
+console.log('Flaw:', Background.flaw(config.background));
+
 // TODO: Other class lists.
 
 console.log('');
@@ -73,8 +79,6 @@ const lifestyle = Family.lifestyle();
 const home = Family.home(lifestyle[1]);
 console.log(`You were raised by ${raisedBy} and had a ${lifestyle[0].toLowerCase()} lifestyle, living ${home}.`);
 console.log(Life.childhood());
-
-// TODO: Ideals, bonds and flaws.
 
 console.log('');
 const lifeEvents = Life.eventCount(config.age);
