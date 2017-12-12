@@ -1,7 +1,12 @@
-.jumbotron h1 {
-  font-size: 3rem;
-  font-weight: 300;
-  line-height: 1.2;
+.jumbotron {
+  border-radius: 0;
+  padding: 4rem 1rem 1.5rem 1rem;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+  }
 }
 
 h3 {
