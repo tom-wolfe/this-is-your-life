@@ -29,7 +29,7 @@ if (!config.alignment) { config.alignment = Life.alignment(); }
 
 console.log('This Is Your Life!');
 console.log('');
-console.log(`You are a ${config.age} year old ${config.alignment} ${config.race} ${config.background.name} adventuring as a ${config.class.name}.`);
+console.log(`You are a ${config.age} year old ${config.alignment} ${config.race.name} ${config.background.name} adventuring as a ${config.class.name}.`);
 
 console.log('');
 const bgReason = Background.reason(config.background);
@@ -40,8 +40,9 @@ const cReason = Class.reason(config.class);
 console.log(`You became a ${config.class.name} because ${cReason}`);
 
 console.log('');
-console.log('Along your travels you found', Item.trinket() + '.');
-
+Race.other(config.race).forEach(o => {
+  console.log(o[0] + ':', o[1]);
+});
 console.log('');
 console.log('Trait:', Background.trait(config.background));
 console.log('Ideal:', Background.ideal(config.background));
@@ -50,11 +51,13 @@ console.log('Flaw:', Background.flaw(config.background));
 Background.other(config.background).forEach(o => {
   console.log(o[0] + ':', o[1]);
 });
-
 console.log('');
 Class.other(config.class).forEach(o => {
   console.log(o[0] + ':', o[1]);
 });
+
+console.log('');
+console.log('Along your travels you found', Item.trinket() + '.');
 
 console.log('');
 console.log('You were born', Birth.place() + '.');

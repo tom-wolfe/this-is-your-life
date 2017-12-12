@@ -60,9 +60,9 @@ module.exports = {
     return random.percent() <= 95;
   },
   parents: function (race) {
-    let options = [race, race];
-    if (Object.keys(halfRaces).includes(race)) {
-      options = halfRaces[race]();
+    let options = [race.name, race.name];
+    if (Object.keys(halfRaces).includes(race.name)) {
+      options = halfRaces[race.name]();
     }
 
     // 50/50 chance to switch races.
