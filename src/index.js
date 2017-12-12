@@ -6,6 +6,7 @@ const Background = require('./background');
 const Family = require('./family');
 const Birth = require('./birth');
 const Life = require('./life');
+const Item = require('./item');
 
 if (config.sources) {
   config.sources = config.sources.split(',').map(s => s.trim());
@@ -37,6 +38,9 @@ if (bgReason) {
 }
 const cReason = Class.reason(config.class);
 console.log(`You became a ${config.class.name} because ${cReason}`);
+
+console.log('');
+console.log('Along your travels you found', Item.trinket() + '.');
 
 console.log('');
 console.log('Trait:', Background.trait(config.background));

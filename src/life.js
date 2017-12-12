@@ -1,4 +1,6 @@
 const Class = require('./class');
+const Item = require('./item');
+
 const random = require('./random');
 
 function adventure() {
@@ -40,7 +42,7 @@ function boon() {
     case 3: return 'You found a riding horse.';
     case 4: return `You found some money. You have ${random.dice('1d20')} gp in addition to your regular starting funds.`;
     case 5: return 'A relative bequeathed you a simple weapon of your choice.';
-    case 6: return 'You found something interesting. You gain one additional trinket.'; // TODO: Trinket.
+    case 6: return 'You found ' + Item.trinket();
     case 7: return 'You once performed a service for a local temple. The next time you visit the temple, you can receive healing up to your hit point maximum.';
     case 8: return 'A friendly alchemist gifted you with a potion of healing or a flask of acid, as you choose.';
     case 9: return 'You found a treasure map.';
