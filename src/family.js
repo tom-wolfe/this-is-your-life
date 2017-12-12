@@ -92,6 +92,7 @@ module.exports = {
     }
   },
   raisedBy: function () {
+    // TODO: Absent parent.
     const r = random.percent();
     switch (true) {
       case r < 2: return 'nobody';

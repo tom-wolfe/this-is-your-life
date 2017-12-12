@@ -10,19 +10,19 @@ const Life = require('./life');
 if (config.sources) {
   config.sources = config.sources.split(',').map(s => s.trim());
 } else {
-  const sources = ['PHB', 'VGM', 'XGE'];
+  config.sources = ['PHB', 'VGM', 'XGE'];
 }
 
 config.age = Number(config.age) || Life.age();
 
 if (config.race) { config.race = Race.byName(config.race); }
-if (!config.race) { config.race = Race.random(sources); }
+if (!config.race) { config.race = Race.random(config.sources); }
 
 if (config.background) { config.background = Background.byName(config.background); }
-if (!config.background) { config.background = Background.random(sources); }
+if (!config.background) { config.background = Background.random(config.sources); }
 
 if (config.class) { config.class = Class.byName(config.class); }
-if (!config.class) { config.class = Class.random(sources); }
+if (!config.class) { config.class = Class.random(config.sources); }
 
 if (!config.alignment) { config.alignment = Life.alignment(); }
 
@@ -43,24 +43,26 @@ console.log('You were born', Birth.place() + '.');
 
 if (!Family.knewParents()) {
   console.log('You didn\'t know who your parents were.')
-}
-
-const parents = Family.parents(config.race);
-if (parents.mother === parents.father) {
-  console.log(`Your mother and father were both ${parents.mother}s.`);
 } else {
-  console.log(`Your mother was a ${parents.mother}, but your father was a ${parents.father}.`);
-  // TODO: Elaborate on parents.
+  const parents = Family.parents(config.race);
+  if (parents.mother === parents.father) {
+    console.log(`Your mother and father were both ${parents.mother}s.`);
+  } else {
+    console.log(`Your mother was a ${parents.mother}, but your father was a ${parents.father}.`);
+  }
+  
+  console.log(`Your mother ${Life.occupation()}.`);
+  console.log(`Your father ${Life.occupation()}.`);
 }
 
+console.log('');
 const siblings = Family.siblings(config.race);
 if (siblings === 0) {
   console.log('You were an only child.');
 } else {
   console.log(`You had ${siblings} siblings.`);
   for (n = 1; n <= siblings; n++) {
-    console.log(`Sibling ${n} is a ${Life.gender()} who is ${Life.relativeAge()} you.`)
-    // TODO: More info about siblings.
+    console.log(`Sibling ${n} is a ${Life.gender()} who is ${Life.relativeAge()} you and ${Life.occupation()}. They are ${Life.status()} ${Life.relationship()}`)
   }
 }
 
@@ -71,8 +73,6 @@ console.log(`You were raised by ${raisedBy} and had a ${lifestyle[0].toLowerCase
 console.log(Life.childhood());
 
 // TODO: Ideals, bonds and flaws.
-
-// TODO: Life Events.
 
 console.log('');
 const lifeEvents = Life.eventCount(config.age);

@@ -1,9 +1,10 @@
+const Class = require('./class');
 const random = require('./random');
 
 function adventure() {
   const r = random.percent();
-  switch(true) {
-    case r < 11: return `You nearly died. You have nasty scars on your body, and you are missing an ear, ${random.dice('1d3')} fingers, or ${random.dice('1d4')} toes.`;  
+  switch (true) {
+    case r < 11: return `You nearly died. You have nasty scars on your body, and you are missing an ear, ${random.dice('1d3')} fingers, or ${random.dice('1d4')} toes.`;
     case r < 21: return 'You suffered a grievous injury. Although the wound healed, it still pains you from time to time.';
     case r < 31: return 'You were wounded, but in time you fully recovered.';
     case r < 41: return 'You contracted a disease while exploring a filthy warren. You recovered from the disease, but you have a persistent cough, pockmarks on your skin, or prematurely gray hair.';
@@ -18,7 +19,7 @@ function adventure() {
 }
 
 function arcane() {
-  switch(random.dice('1d10')) {
+  switch (random.dice('1d10')) {
     case 1: return 'You were charmed or frightened by a spell.';
     case 2: return 'You were injured by the effect ofa spell.';
     case 3: return 'You witnessed a powerful spell being cast by a cleric, a druid, a sorcerer, a warlock, or a wizard.';
@@ -33,7 +34,7 @@ function arcane() {
 }
 
 function boon() {
-  switch(random.dice('1d10')) {
+  switch (random.dice('1d10')) {
     case 1: return 'A friendly wizard gave you a spell scroll containing one cantrip';
     case 2: return 'You saved the life of a commoner, who now owes you a life debt. This individual accompanies you on your travels and performs mundane tasks for you, but will leave if neglected, abused, or imperiled.';
     case 3: return 'You found a riding horse.';
@@ -48,7 +49,7 @@ function boon() {
 }
 
 function crime() {
-  switch(random.dice('1d8')) {
+  switch (random.dice('1d8')) {
     case 1: return 'Murder';
     case 2: return 'Theft';
     case 3: return 'Burglary';
@@ -61,7 +62,7 @@ function crime() {
 }
 
 function posessedCreature() {
-  switch(random.dice('1d6')) {
+  switch (random.dice('1d6')) {
     case 1: return 'celestial';
     case 2: return 'devil';
     case 3: return 'demon';
@@ -73,7 +74,7 @@ function posessedCreature() {
 
 function punishment() {
   const r = random.dice('1d12')
-  switch(true) {
+  switch (true) {
     case r < 4: return 'You did not commit the crime and were exonerated after being accused.';
     case r < 7: return 'You committed the crime or helped do so, but nonetheless the authorities found you not guilty.';
     case r < 9: return 'You were nearly caught in the act. You had to flee and are wanted in the community where the crime occurred.';
@@ -83,7 +84,7 @@ function punishment() {
 
 function supernatural() {
   const r = random.percent();
-  switch(true) {
+  switch (true) {
     case r < 6: return `You were ensorcelled by a fey and enslaved for ${random.dice('1d6')} years before you escaped.`;
     case r < 11: return 'You saw a demon and ran away before it could do anything to you.';
     case r < 16: return `A devil tempted you. Make a DC 10 Wisdom saving throw. On a failed save, your alignment shifts one step toward evil (if it\'s not evil already), and you start the game with an additional ${random.dice('1d20') + 50} gp.`;
@@ -103,8 +104,8 @@ function supernatural() {
 }
 
 function tragedy() {
-  switch(random.dice('1d12')) {
-    case 1: 
+  switch (random.dice('1d12')) {
+    case 1:
     case 2: return `A family member or a close friend died. Cause of death: ${causeOfDeath()}.`;
     case 3: return 'A friendship ended bitterly, and the other person is now hostile to you. The cause might have been a misunderstanding or something you or the former friend did.';
     case 4: return 'You lost all your possessions in a disaster, and you had to rebuild your life.';
@@ -120,13 +121,13 @@ function tragedy() {
 }
 
 function causeOfDeath() {
-  switch(random.dice('1d12')) {
+  switch (random.dice('1d12')) {
     case 1: return 'Unknown';
     case 2: return 'Murdered';
     case 3: return 'Killed in battle';
     case 4: return 'Accident related to class or occupation';
     case 5: return 'Accident unrelated to class or occupation';
-    case 6: 
+    case 6:
     case 7: return 'Natural causes, such as disease or old age';
     case 8: return 'Apparent suicide';
     case 9: return 'Torn apart by an animal or a natural disaster';
@@ -137,7 +138,7 @@ function causeOfDeath() {
 }
 
 function metallic() {
-  switch(random.dice('1d8')) {
+  switch (random.dice('1d8')) {
     case 1: return 'brass';
     case 2: return 'bronze';
     case 3: return 'copper';
@@ -150,12 +151,24 @@ function metallic() {
 }
 
 function war() {
-  // todo: Implement.
-  return '';
+  switch (random.dice('1d12')) {
+    case 1: return 'You were knocked out and left for dead. You woke up hours later with no recollection of the battle.';
+    case 2:
+    case 3: return 'You were badly injured in the fight, and you still bear the awful scars of those wounds.';
+    case 4: return 'You ran away from the battle to save your life, but you still feel shame for your cowardice.';
+    case 5:
+    case 6:
+    case 7: return 'You suffered only minor injuries, and the wounds all healed without leaving scars.';
+    case 8:
+    case 9: return 'You survived the battle, but you suffer from terrible nightmares in which you relive the experience.';
+    case 10:
+    case 11: return 'You escaped the battle unscathed, though many of your friends were injured or lost.';
+    case 12: return 'You acquitted yourself well in battle and are remembered as a hero. You might have received a medal for your bravery';
+  }
 }
 
 function weirdStuff() {
-  switch(random.dice('1d12')) {
+  switch (random.dice('1d12')) {
     case 1: return `You were turned into a toad and remained in that form for ${random.dice('1d4')} weeks.`;
     case 2: return 'You were petrified and remained a stone statue for a time until someone freed you.';
     case 3: return `You were enslaved by a hag, a satyr, or some other being and lived in that creature\'s thrall for ${random.dice('1d6')} years.`;
@@ -191,21 +204,68 @@ function event(previous) {
   }
 }
 
+function occupation() {
+  const r = random.percent();
+  switch (true) {
+    case r < 6: return 'works as an academic';
+    case r < 11: return 'works as an adventuring ' + Class.random();
+    case r < 12: return 'is an aristocrat';
+    case r < 27: return 'works as an artisan or guild member';
+    case r < 32: return 'is a criminal';
+    case r < 37: return 'works as an entertainer';
+    case r < 39: return 'is an exile, hermit or refugee'
+    case r < 44: return 'is an explorer or wanderer';
+    case r < 56: return 'works as a farmer or herder';
+    case r < 61: return 'works as a hunter or trapper';
+    case r < 76: return 'works as a laborer';
+    case r < 81: return 'works as a merchant';
+    case r < 86: return 'works as a politician or beurocrat';
+    case r < 91: return 'works as a priest';
+    case r < 96: return 'works as a sailor';
+    case r < 101: return 'serves as an soldier';
+    default: return weirdStuff();
+  }
+}
+
 function alignment() {
   const r = random.dice('3d6');
-  switch(true) {
+  switch (true) {
     case r < 4: return (random.percent() > 50) ? 'Chaotic Evil' : 'Chaotic Neutral';
-    case r < 6 : return 'Lawful Evil';
-    case r < 9 : return 'Neutral Evil';
-    case r < 13 : return 'Neutral';
-    case r < 16 : return 'Neutral Good';
-    case r < 18 : return (random.percent() > 50) ? 'Lawful Good' : 'Lawful Neutral';
-    case r < 19 : return (random.percent() > 50) ? 'Chaotic Good' : 'Chaotic Neutral';
+    case r < 6: return 'Lawful Evil';
+    case r < 9: return 'Neutral Evil';
+    case r < 13: return 'Neutral';
+    case r < 16: return 'Neutral Good';
+    case r < 18: return (random.percent() > 50) ? 'Lawful Good' : 'Lawful Neutral';
+    case r < 19: return (random.percent() > 50) ? 'Chaotic Good' : 'Chaotic Neutral';
+  }
+}
+
+function relationship() {
+  const r = random.dice('3d4');
+  switch (true) {
+    case r < 5: return 'You are hostile towards each other.';
+    case r < 11: return 'You get on well.';
+    case r < 13: return 'You are indifferent to each other.';
+  }
+}
+
+function status() {
+  const r = random.dice('3d6');
+  switch (true) {
+    case r < 4: return 'dead. ' + causeOfDeath() + '.';
+    case r < 6: return 'missing or unknown.';
+    case r < 9: return 'alive, but doing poorly due to injury, financial trouble, or relationship difficulties.';
+    case r < 13: return 'alive and well.';
+    case r < 16: return 'alive and quite successful.';
+    case r < 18: return 'alive and infamous.';
+    case r < 19: return 'alive and famous.';
   }
 }
 
 module.exports = {
   alignment,
+  status,
+  relationship,
   gender: function () {
     return (random.percent() > 50) ? 'male' : 'female';
   },
@@ -260,4 +320,5 @@ module.exports = {
   war,
   weirdStuff,
   event,
+  occupation,
 }
