@@ -3,7 +3,7 @@ const random = require('./random');
 const backgrounds = {
   'PHB': [
     {
-      name: 'Acolyte', reasons: [ // TODO: Other.
+      name: 'Acolyte', reasons: [
         'you ran away from home at an early age and found refuge in a temple.',
         'your family gave you to a temple, since they were unable or unwilling to care for you.',
         'you grew up in a household with strong religious convictions. Entering the service of one or more gods seemed natural.',
@@ -47,7 +47,7 @@ const backgrounds = {
       ]
     },
     {
-      name: 'Charlatan', reasons: [ // TODO: Other.
+      name: 'Charlatan', reasons: [
         'you were left to your own devices, and your knack for manipulating others helped you survive.',
         'you learned early on that people are gullible and easy to exploit.',
         'you often got in trouble, but you managed to talk your way out of it every time.',
@@ -79,10 +79,7 @@ const backgrounds = {
         'Somewhere out there, I have a child who doesn\'t know me. I\'m making the world better for him or her.',
         'I come from a noble family, and one day I\'ll reclaim my lands and title from those who stole them from me.',
         'A powerful person killed someone I love. Some day soon, I\'ll have my revenge.',
-        `
-                I swindled and ruined a person who didn't deserve ill.
-                I seek to atone for my misdeeds but might never be able to forgive myself.
-            `,
+        'I swindled and ruined a person who didn\'t deserve ill. I seek to atone for my misdeeds but might never be able to forgive myself.',
       ],
       flaws: [
         'I can\'t resist a pretty face.',
@@ -91,7 +88,17 @@ const backgrounds = {
         'I\'m too greedy for my own good. I can\'t resist taking a risk if there\'s money involved.',
         'I can\'t resist swindling people who are more powerful than me.',
         'I hate to admit it and will hate myself for it, but I\'ll run and preserve my own hide if the going gets tough.',
-      ]
+      ],
+      other: {
+        'Scam': [
+          'I cheat at games of chance.',
+          'I shave coins or forge documents.',
+          'I insinuate myself into people\'s lives to prey on their weakness and secure their fortunes.',
+          'I put on new identities like clothes.',
+          'I run sleight-of.hand cons on street corners.',
+          'I convince people that worthless junk is worth their hard.earned money.',
+        ]
+      }
     },
     {
       name: 'Criminal', reasons: [
@@ -148,7 +155,7 @@ const backgrounds = {
         'you saw a bard perform once, and you knew from that moment on what you were born to do.',
         'you earned coin by performing on street corners and eventually made a name for yourself.',
         'a traveling entertainer took you in and taught you the trade.',
-      ], // TODO: Other.
+      ],
       traits: [
         'I know a story relevant to almost every situation.',
         'Whenever I come to a new place, I collect local rumors and spread gossip.',
@@ -182,7 +189,10 @@ const backgrounds = {
         'I once satirized a noble who still wants my head. It was a mistake that I will likely repeat.',
         'I have trouble keeping my true feelings hidden. My sharp tongue lands me in trouble.',
         'Despite my best efforts, I am unreliable to my friends.',
-      ]
+      ],
+      other: {
+        'Routine': ['Actor', 'Dancer', 'Fire-eater', 'Jester', 'Juggler', 'Instrumentalist', 'Poet', 'Singer', 'Storyteller', 'Tumbler']
+      }
     },
     {
       name: 'Folk Hero', reasons: [
@@ -250,7 +260,7 @@ const backgrounds = {
         'you were always good with your hands, so you took the opportunity to learn a trade.',
         'you wanted to get away from your home situation and start a new life.',
         'you learned the essentials of your craft from a mentor but had to join the guild to finish your training.',
-      ], // TODO: Other.
+      ],
       traits: [
         'I believe that anything worth doing is worth doing right. I can\'t help it-I\'m a perfectionist.',
         'I\'m a snob who looks down on those who can\'t appreciate fine art.',
@@ -284,7 +294,31 @@ const backgrounds = {
         'I\'m never satisfied with what I have-I always want more.',
         'I would kill to acquire a noble title.',
         'I\'m horribly jealous of anyone who can outshine my handiwork. Everywhere I go, I\'m surrounded by rivals.',
-      ]
+      ],
+      other: {
+        'Business': [
+          'Alchemists and apothecaries',
+          'Armorers, locksmiths, and fine-smiths',
+          'Brewers, distillers, and vintners',
+          'Calligraphers, scribes, and scriveners',
+          'Carpenters, roofers, and plasterers',
+          'Cartographers, surveyors, and chart-makers',
+          'Cobblers and shoemakers',
+          'Cooks and bakers',
+          'Glassblowers and glaziers',
+          'Jewelers and gem-cutters',
+          'Leather-workers, skinners, and tanners',
+          'Masons and stone-cutters',
+          'Painters, liners, and sign-makers',
+          'Potters and tile-makers',
+          'Shipwrights and sail-makers',
+          'Smiths and metal-forgers',
+          'Tinkers, pewterers, and casters',
+          'Wagon-makers and wheelwrights',
+          'Weavers and dyers',
+          'Woodcarvers, coopers, and bowyers',
+        ]
+      }
     },
     {
       name: 'Hermit', reasons: [
@@ -294,7 +328,7 @@ const backgrounds = {
         'you felt compelled to forsake your past, but did so with great reluctance, and sometimes you regret making that decision.',
         'you lost everything - your home, your family, your friends. Going it alone was all you could do.',
         'society\'s decadence disgusted you, so you decided to leave it behind.',
-      ], // TODO: Other.
+      ],
       traits: [
         'I\'ve been isolated for so long that I rarely speak, preferring gestures and the occasional grunt.',
         'I am utterly serene, even in the face of disaster.',
@@ -328,7 +362,19 @@ const backgrounds = {
         'I let my need to win arguments overshadow friendships and harmony.',
         'I\'d risk too much to uncover a lost bit of knowledge.',
         'I like keeping secrets and won\'t share them with anyone.',
-      ]
+      ],
+      other: {
+        'Life of Seclusion': [
+          'I was searching for spiritual enlightenment.',
+          'I was partaking of communal living in accordance with the dictates of a religious order.',
+          'I was exiled for a crime I didn\'t commit.',
+          'I retreated from society after a life-altering event.',
+          'I needed a quiet place to work on my art, literature, music, or manifesto.',
+          'I needed to commune with nature, far from civilization.',
+          'I was the caretaker of an ancient ruin or relic.',
+          'I was a pilgrim in search of a person, place, or relic of spiritual significance.',
+        ]
+      }
     },
     {
       name: 'Noble', reasons: [
@@ -338,7 +384,7 @@ const backgrounds = {
         'your family has a title, but none of your ancestors have distinguished themselves since they gained it.',
         'your family is filled with remarkable people. You hope to live up to their example.',
         'you hope to increase your family\'s power and influence.',
-      ], // TODO: Other.
+      ],
       traits: [
         'My eloquent flattery makes everyone I talk to feel like the most wonderful and important person in the world.',
         'The common folk love me for my kindness and generosity.',
@@ -382,7 +428,7 @@ const backgrounds = {
         'your people lived on the edges of civilization, and you learned the methods of survival from your family.',
         'after a tragedy, you retreated to the wilderness, leaving your old life behind.',
         'your family moved away from civilization, and you learned to adapt to your new environment.',
-      ], // TODO: Other.
+      ],
       traits: [
         'I\'m driven by a wanderlust that led me away from home.',
         'I watch over my friends as if they were a litter of newborn pups.',
@@ -416,7 +462,10 @@ const backgrounds = {
         'Iam slow to trust members of other races, tribes, and societies.',
         'Violence is my answer to almost any challenge.',
         'don\'t expect me to save those who can\'t save themselves. It is nature\'s way that the strong thrive and the weak perish.',
-      ]
+      ],
+      other: {
+        'Origin': ['Forester ', 'Trapper', 'Homesteader', 'Guide', 'Exile or outcast', 'Bounty hunter', 'Pilgrim', 'Tribal nomad', 'Hunter-gatherer', 'Tribal marauder']
+      }
     },
     {
       name: 'Sage', reasons: [
@@ -472,7 +521,7 @@ const backgrounds = {
         'you needed to escape your community quickly, so you stowed away on a ship. When the crew found you, you were forced to work for your passage.',
         'reavers attacked your community, so you found refuge on a ship until you could seek vengeance.',
         'you had few prospects where you were living, so you left to find your fortune elsewhere.'
-      ], // TODO: Other.
+      ],
       traits: [
         'My friends know they can rely on me, no matter what.',
         'I work hard so that I can play hard when the work is done.',
@@ -563,7 +612,7 @@ const backgrounds = {
         'a notorious thief looked after you and other orphans, and you spied and stole to earn your keep.',
         'one day you woke up on the streets, alone and hungry, with no memory of your early childhood.',
         'your parents died, leaving no one to look after you. You raised yourself.'
-      ], // TODO: Other
+      ],
       traits: [
         'I hide scraps of food and trinkets away in my pockets.',
         'I ask a lot of questions.',
