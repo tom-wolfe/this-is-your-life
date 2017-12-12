@@ -480,6 +480,6 @@ module.exports = {
   },
   other: function (cClass) {
     if (!cClass.other) return [];
-    return Object.keys(cClass.other).map(o => [o, random.element(cClass.other[o])]);
+    return Object.keys(cClass.other).map(o => ({ name: o, value: random.element(cClass.other[o]) }));
   },
 }

@@ -155,6 +155,6 @@ module.exports = {
   },
   other: function (race) {
     if (!race.other) return [];
-    return Object.keys(race.other).map(o => [o, random.element(race.other[o])]);
+    return Object.keys(race.other).map(o => ({ name: o, value: random.element(race.other[o]) }));
   },
 }

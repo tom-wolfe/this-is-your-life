@@ -14,7 +14,7 @@ const halfRaces = {
   'Protector Aasimar': aasimar,
 }
 
-function aasimar() {
+function aasimar () {
   const r = random.dice('1d8');
   switch (true) {
     case r < 5: return ['Human', 'Human'];
@@ -25,7 +25,7 @@ function aasimar() {
   }
 }
 
-function halfElf() {
+function halfElf () {
   const r = random.dice('1d8');
   switch (true) {
     case r < 6: return ['Elf', 'Human'];
@@ -35,7 +35,7 @@ function halfElf() {
   }
 }
 
-function halfOrc() {
+function halfOrc () {
   const r = random.dice('1d8');
   switch (true) {
     case r < 4: return ['Orc', 'Human'];
@@ -45,7 +45,7 @@ function halfOrc() {
   }
 }
 
-function tiefling() {
+function tiefling () {
   const r = random.dice('1d8');
   switch (true) {
     case r < 5: return ['Human', 'Human'];
@@ -67,10 +67,10 @@ module.exports = {
 
     // 50/50 chance to switch races.
     if (random.percent() > 50) { options.reverse(); }
-    return { mother: options[0], father: options[1] };
+    return { mother: { race: options[0] }, father: { race: options[1] } };
   },
-  absentParent: function() {
-    switch(random.dice('1d4')) {
+  absentParent: function () {
+    switch (random.dice('1d4')) {
       case 1: return `is dead. ${Life.causeOfDeath()}.`;
       case 2: return 'was imprisoned, enslaved, or otherwise taken away.';
       case 3: return 'abandoned you.';
@@ -94,13 +94,13 @@ module.exports = {
   lifestyle: function () {
     const r = random.dice('3d6');
     switch (true) {
-      case r < 4: return ['Wretched', -40];
-      case r < 6: return ['Squalid', -20];
-      case r < 9: return ['Poor', -10];
-      case r < 13: return ['Modest', 0];
-      case r < 16: return ['Comfortable', +10];
-      case r < 18: return ['Wealthy', +20];
-      case r < 19: return ['Aristocratic', +40];
+      case r < 4: return { name: 'Wretched', modifier: -40 };
+      case r < 6: return { name: 'Squalid', modifier: -20 };
+      case r < 9: return { name: 'Poor', modifier: -10 };
+      case r < 13: return { name: 'Modest', modifier: 0 };
+      case r < 16: return { name: 'Comfortable', modifier: +10 };
+      case r < 18: return { name: 'Wealthy', modifier: +20 };
+      case r < 19: return { name: 'Aristocratic', modifier: +40 };
     }
   },
   raisedBy: function (knewParents) {
@@ -121,19 +121,19 @@ module.exports = {
       }
     } else {
       switch (true) {
-        case r < 6: return   { name: 'nobody', absent: ['mother', 'father'] };
-        case r < 11: return  { name: 'an institution, such as an asylum', absent: ['mother', 'father'] };
-        case r < 16: return  { name: 'a temple', absent: ['mother', 'father'] };
-        case r < 21: return  { name: 'an ophanage', absent: ['mother', 'father'] };
-        case r < 31: return  { name: 'a guardian', absent: ['mother', 'father'] };
-        case r < 51: return  { name: 'your paternal or maternal aunt, uncle, or both; or extended family such as a tribe or clan', absent: ['mother', 'father'] };
-        case r < 81: return  { name: 'your paternal or maternal grandparent(s)', absent: ['mother', 'father'] };
+        case r < 6: return { name: 'nobody', absent: ['mother', 'father'] };
+        case r < 11: return { name: 'an institution, such as an asylum', absent: ['mother', 'father'] };
+        case r < 16: return { name: 'a temple', absent: ['mother', 'father'] };
+        case r < 21: return { name: 'an ophanage', absent: ['mother', 'father'] };
+        case r < 31: return { name: 'a guardian', absent: ['mother', 'father'] };
+        case r < 51: return { name: 'your paternal or maternal aunt, uncle, or both; or extended family such as a tribe or clan', absent: ['mother', 'father'] };
+        case r < 81: return { name: 'your paternal or maternal grandparent(s)', absent: ['mother', 'father'] };
         case r < 101: return { name: 'your adoptive family (same or different race)', absent: ['mother', 'father'] };
       }
     }
   },
-  home: function (mod) {
-    const r = random.percent() + mod;
+  home: function (lifestyle) {
+    const r = random.percent() + lifestyle.modifier;
     switch (true) {
       case r < 1: return 'on the streets';
       case r < 21: return 'in a rundown shack';
