@@ -8,11 +8,24 @@ const halfRaces = {
   'Fire Genasi': () => ['Human', 'Efreet'],
   'Water Genasi': () => ['Human', 'Marid'],
   'Earth Genasi': () => ['Human', 'Dao'],
+  'Fallen Aasimar': aasimar,
+  'Scourge Aasimar': aasimar,
+  'Protector Aasimar': aasimar,
+}
+
+function aasimar() {
+  const r = random.dice('1d8');
+  switch (true) {
+    case r < 5: return ['Human', 'Human'];
+    case r < 6: return ['Aasimar', 'Human'];
+    case r < 7: return ['Aasimar', 'Aasimar'];
+    case r < 8: return ['Celestial', 'Human'];
+    case r === 8: return ['Aasimar', 'Celestial']
+  }
 }
 
 function halfElf() {
   const r = random.dice('1d8');
-  console.log(r);
   switch (true) {
     case r < 6: return ['Elf', 'Human'];
     case r === 6: return ['Elf', 'Half-Elf'];

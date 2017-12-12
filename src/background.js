@@ -27,7 +27,7 @@ const backgrounds = {
         'you resented authority in my younger days and saw a life of crime as the best way to fight against tyranny and oppression.',
         'necessity forced you to take up the life, since it was the only way you could survive.',
         'you fell in with a gang of reprobates and ne\'er-do-wells, and you learned your specialty from them.',
-        'A parent or relative taught you your criminal specialty to prepare you for the family business.',
+        'a parent or relative taught you your criminal specialty to prepare you for the family business.',
         'you left home and found a place in a thieves\' guild or some other criminal organization.',
         'you were always bored, so you turned to crime to pass the time and discovered you were quite good at it.',
       ]
@@ -70,7 +70,7 @@ const backgrounds = {
         'you never liked the people you called your friends, so it was easy for you to strike out on your own.',
         'you felt compelled to forsake your past, but did so with great reluctance, and sometimes you regret making that decision.',
         'you lost everything - your home, your family, your friends. Going it alone was all you could do.',
-        'Society\'s decadence disgusted you, so you decided to leave it behind.',
+        'society\'s decadence disgusted you, so you decided to leave it behind.',
       ]
     },
     { name: 'Knight', reasons: [] },
@@ -90,7 +90,7 @@ const backgrounds = {
         'from a young age, you couldn\'t abide the stink of the cities and preferred to spend your time in nature.',
         'you came to understand the darkness that lurks in the wilds, and you vowed to combat it.',
         'your people lived on the edges of civilization, and you learned the methods of survival from your family.',
-        'After a tragedy, you retreated to the wilderness, leaving your old life behind.',
+        'after a tragedy, you retreated to the wilderness, leaving your old life behind.',
         'your family moved away from civilization, and you learned to adapt to your new environment.',
       ]
     },
@@ -102,7 +102,7 @@ const backgrounds = {
         'you were always an avid reader, and you learned much I about your favorite topic on your own.',
         'you discovered an old library and pored over the texts you found there. That experience awakened a hunger for more knowledge.',
         'you impressed a wizard who said you were squandering your talents and should seek out an education to take advantage of your gifts.',
-        'One of your parents or a relative gave you a basic education that whetted your appetite, and you left home to build on what you had learned.',
+        'one of your parents or a relative gave you a basic education that whetted your appetite, and you left home to build on what you had learned.',
       ]
     },
     {
@@ -160,6 +160,9 @@ const backgrounds = {
 };
 
 module.exports = {
+  byName: function (name) {
+    return [].concat.apply([], Object.keys(backgrounds).map(r => backgrounds[r])).filter(r => r.name === name)[0];
+  },
   reason: function (background) {
     return random.element(background.reasons);
   },

@@ -55,6 +55,11 @@ const races = {
   ]
 };
 
-module.exports = function (sources = 'ALL') {
-  return random.sourcedElement(races, sources);
+module.exports = {
+  byName: function (name) {
+    return [].concat.apply([], Object.keys(races).map(r => races[r])).filter(r => r === name)[0];
+  },
+  random: function (sources = 'ALL') {
+    return random.sourcedElement(races, sources);
+  }
 }

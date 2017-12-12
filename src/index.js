@@ -1,4 +1,4 @@
-console.log('This Is Your Life!');
+const config = Object.assign({}, ...process.argv.slice(2).map(a => a.split('=').map(a => a.trim())).map(a => ({[a[0]]: a[1]})));
 
 const Class = require('./class');
 const Race = require('./race');
@@ -7,26 +7,45 @@ const Family = require('./family');
 const Birth = require('./birth');
 const Life = require('./life');
 
-const sources = ['PHB', 'VGM', 'XGE'];
+if (config.sources) {
+  config.sources = config.sources.split(',').map(s => s.trim());
+} else {
+  const sources = ['PHB', 'VGM', 'XGE'];
+}
 
-const cClass = Class(sources);
-const race = Race(sources);
-const background = Background.random(sources);
+config.age = Number(config.age) || Life.age();
+
+if (config.race) { config.race = Race.byName(config.race); }
+if (!config.race) { config.race = Race.random(sources); }
+
+if (config.background) { config.background = Background.byName(config.background); }
+if (!config.background) { config.background = Background.random(sources); }
+
+if (config.class) { config.class = Class.byName(config.class); }
+if (!config.class) { config.class = Class.random(sources); }
+
+if (!config.alignment) { config.alignment = Life.alignment(); }
+
+console.log('This Is Your Life!');
+console.log('');
+console.log(`You are a ${config.age} year old ${config.alignment} ${config.race} ${config.background.name} adventuring as a ${config.class.name}.`);
 
 console.log('');
-console.log('Background:', background.name);
-console.log('Race:', race);
-console.log('Class:', cClass);
+const bgReason = Background.reason(config.background);
+if (bgReason) {
+  console.log(`You became a ${config.background.name} because ${bgReason}`);
+}
+const cReason = Class.reason(config.class);
+console.log(`You became a ${config.class.name} because ${cReason}`);
 
 console.log('');
 console.log('You were born', Birth.place() + '.');
-
 
 if (!Family.knewParents()) {
   console.log('You didn\'t know who your parents were.')
 }
 
-const parents = Family.parents(race);
+const parents = Family.parents(config.race);
 if (parents.mother === parents.father) {
   console.log(`Your mother and father were both ${parents.mother}s.`);
 } else {
@@ -34,7 +53,7 @@ if (parents.mother === parents.father) {
   // TODO: Elaborate on parents.
 }
 
-const siblings = Family.siblings(race);
+const siblings = Family.siblings(config.race);
 if (siblings === 0) {
   console.log('You were an only child.');
 } else {
@@ -51,18 +70,15 @@ const home = Family.home(lifestyle[1]);
 console.log(`You were raised by ${raisedBy} and had a ${lifestyle[0].toLowerCase()} lifestyle, living ${home}.`);
 console.log(Life.childhood());
 
-console.log('');
-const bgReason = Background.reason(background);
-if (bgReason) {
-  console.log(`You became a ${background.name} because ${bgReason}`);
-}
-
-console.log('');
-const age = Life.age();
-console.log(`You are ${age} years old.`);
-
 // TODO: Ideals, bonds and flaws.
 
-// TODO: Reason for class training.
-
 // TODO: Life Events.
+
+console.log('');
+const lifeEvents = Life.eventCount(config.age);
+console.log(`You have had ${lifeEvents} major events in your life:`);
+events = [];
+for(n = 0; n < lifeEvents; n++) {
+  const event = Life.event(events);
+  console.log(event);
+}
