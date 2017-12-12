@@ -1,4 +1,4 @@
-const config = Object.assign({}, ...process.argv.slice(2).map(a => a.split('=').map(a => a.trim())).map(a => ({[a[0]]: a[1]})));
+const config = Object.assign({}, ...process.argv.slice(2).map(a => a.split('=').map(a => a.trim())).map(a => ({ [a[0]]: a[1] })));
 
 const Class = require('./class');
 const Race = require('./race');
@@ -39,22 +39,25 @@ if (bgReason) {
 const cReason = Class.reason(config.class);
 console.log(`You became a ${config.class.name} because ${cReason}`);
 
-console.log('');
-Race.other(config.race).forEach(o => {
-  console.log(o[0] + ':', o[1]);
-});
+const raceOther = Race.other(config.race);
+if (raceOther) {
+  console.log('');
+  raceOther.forEach(o => console.log(o[0] + ':', o[1]));
+}
+
 console.log('');
 console.log('Trait:', Background.trait(config.background));
 console.log('Ideal:', Background.ideal(config.background));
 console.log('Bond:', Background.bond(config.background));
 console.log('Flaw:', Background.flaw(config.background));
-Background.other(config.background).forEach(o => {
-  console.log(o[0] + ':', o[1]);
-});
-console.log('');
-Class.other(config.class).forEach(o => {
-  console.log(o[0] + ':', o[1]);
-});
+Background.other(config.background).forEach(o => console.log(o[0] + ':', o[1]));
+
+const classOther = Class.other(config.class);
+if (classOther) {
+  console.log('');
+  classOther.forEach(o => console.log(o[0] + ':', o[1]));
+}
+
 
 console.log('');
 console.log('Along your travels you found', Item.trinket() + '.');
@@ -72,7 +75,7 @@ if (!config.knewParents) {
   } else {
     console.log(`Your mother was a ${parents.mother}, but your father was a ${parents.father}.`);
   }
-  
+
   console.log(`Your mother ${Life.occupation()}.`);
   console.log(`Your father ${Life.occupation()}.`);
 }
@@ -89,14 +92,15 @@ if (config.raisedBy.absent.includes('father')) {
 }
 console.log(Life.childhood());
 
-console.log('');
 const siblings = Family.siblings(config.race);
 if (siblings === 0) {
+  console.log('');
   console.log('You were an only child.');
-} else if(config.knewParents) {
-  console.log(`You had ${siblings} siblings.`);
+} else if (config.knewParents) {
+  console.log('');
+  console.log(`You had ${siblings} sibling${siblings === 1 ? '' : 's'}.`);
   for (n = 1; n <= siblings; n++) {
-    console.log(`Sibling ${n} is a ${Life.gender()} who is ${Life.relativeAge()} you and ${Life.occupation()}. They are ${Life.status()} ${Life.relationship()}`)
+    console.log(`A ${Life.relativeAge()} ${Family.siblingSex()} who ${Life.occupation()}. They are ${Life.status()} ${Life.relationship()}`)
   }
 }
 
@@ -104,7 +108,7 @@ console.log('');
 const lifeEvents = Life.eventCount(config.age);
 console.log(`You have had ${lifeEvents} major events in your life:`);
 events = [];
-for(n = 0; n < lifeEvents; n++) {
+for (n = 0; n < lifeEvents; n++) {
   const event = Life.event(events);
   console.log(event);
 }

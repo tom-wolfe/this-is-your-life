@@ -77,15 +77,18 @@ module.exports = {
       case 4: return 'disappeared to an unknown fate.';
     }
   },
+  siblingSex: function () {
+    return (random.percent() > 50) ? 'brother' : 'sister';
+  },
   siblings: function (race) {
     const r = random.dice('1d10');
-    const mod = (race.includes('dwarf') || race.includes('elf')) ? -2 : 0;
+    const mod = (race.name.includes('dwarf') || race.name.includes('elf')) ? -2 : 0;
     switch (true) {
       case r < 3: return 0;
       case r < 5: return Math.max(0, random.dice('1d3') + mod);
-      case r < 7: return Math.max(0, random.dice('1d4') + 1 + mod);
-      case r < 9: return Math.max(0, random.dice('1d6') + 2 + mod);
-      case r < 11: return Math.max(0, random.dice('1d8') + 3 + mod);
+      case r < 7: return Math.max(0, random.dice('1d4') + mod);
+      case r < 9: return Math.max(0, random.dice('1d6') + 1 + mod);
+      case r < 11: return Math.max(0, random.dice('1d8') + 2 + mod);
     }
   },
   lifestyle: function () {

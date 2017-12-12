@@ -224,7 +224,7 @@ function occupation() {
     case r < 86: return 'works as a politician or bureaucrat';
     case r < 91: return 'works as a priest';
     case r < 96: return 'works as a sailor';
-    case r < 101: return 'serves as an soldier';
+    case r < 101: return 'serves as a soldier';
     default: return weirdStuff();
   }
 }
@@ -266,11 +266,9 @@ function status() {
 
 module.exports = {
   alignment,
+  causeOfDeath,
   status,
   relationship,
-  gender: function () {
-    return (random.percent() > 50) ? 'male' : 'female';
-  },
   age: function () {
     const r = random.percent();
     switch (true) {
@@ -285,9 +283,9 @@ module.exports = {
   relativeAge: function () {
     const r = random.dice('2d6');
     switch (true) {
-      case r < 3: return 'the same age as';
-      case r < 8: return 'older than';
-      case r < 13: return 'younger than';
+      case r < 3: return 'twin';
+      case r < 8: return 'older';
+      case r < 13: return 'younger';
     }
   },
   childhood: function () {
