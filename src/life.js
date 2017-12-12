@@ -193,10 +193,10 @@ function event(previous) {
     case r < 11: return tragedy();
     case r < 21: return boon();
     case r < 31: return (previous.filter(n => n < 31 && n >= 21).length > 1) ? 'You had a child.' : 'You fell in love or got married.';
-    case r < 41: return 'You made an enemy of an adventurer ' + ((random.dice('1d6') % 2 === 0) ? 'but it wasn\'t your fault.' : 'and it was your fault.');
-    case r < 51: return 'You made a friend of an adventurer.'; // TODO: More info?
+    case r < 41: return `You made an enemy of an adventuring ${Class.random().name} ` + ((random.dice('1d6') % 2 === 0) ? 'but it wasn\'t your fault.' : 'and it was your fault.');
+    case r < 51: return `You made a friend of an adventuring ${Class.random().name}.`;
     case r < 71: return `You spent time working in a job related to your background. Start the game with an extra ${random.dice('2d6')} gp.`;
-    case r < 76: return 'You met someone important.'; // TODO: More info?
+    case r < 76: return 'You met someone important.';
     case r < 81: return 'You went on an adventure. ' + adventure();
     case r < 86: return supernatural();
     case r < 91: return 'You fought in a battle. ' + war();
@@ -221,7 +221,7 @@ function occupation() {
     case r < 61: return 'works as a hunter or trapper';
     case r < 76: return 'works as a laborer';
     case r < 81: return 'works as a merchant';
-    case r < 86: return 'works as a politician or beurocrat';
+    case r < 86: return 'works as a politician or bureaucrat';
     case r < 91: return 'works as a priest';
     case r < 96: return 'works as a sailor';
     case r < 101: return 'serves as an soldier';

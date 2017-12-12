@@ -59,7 +59,8 @@ Class.other(config.class).forEach(o => {
 console.log('');
 console.log('You were born', Birth.place() + '.');
 
-if (!Family.knewParents()) {
+config.knewParents = Family.knewParents();
+if (!config.knewParents) {
   console.log('You didn\'t know who your parents were.')
 } else {
   const parents = Family.parents(config.race);
@@ -73,22 +74,28 @@ if (!Family.knewParents()) {
   console.log(`Your father ${Life.occupation()}.`);
 }
 
+config.raisedBy = Family.raisedBy(config.knewParents);
+const lifestyle = Family.lifestyle();
+const home = Family.home(lifestyle[1]);
+console.log(`You were raised by ${config.raisedBy.name} and had a ${lifestyle[0].toLowerCase()} lifestyle, living ${home}.`);
+if (config.raisedBy.absent.includes('mother')) {
+  console.log('Your mother', Family.absentParent());
+}
+if (config.raisedBy.absent.includes('father')) {
+  console.log('Your father', Family.absentParent());
+}
+console.log(Life.childhood());
+
 console.log('');
 const siblings = Family.siblings(config.race);
 if (siblings === 0) {
   console.log('You were an only child.');
-} else {
+} else if(config.knewParents) {
   console.log(`You had ${siblings} siblings.`);
   for (n = 1; n <= siblings; n++) {
     console.log(`Sibling ${n} is a ${Life.gender()} who is ${Life.relativeAge()} you and ${Life.occupation()}. They are ${Life.status()} ${Life.relationship()}`)
   }
 }
-
-const raisedBy = Family.raisedBy();
-const lifestyle = Family.lifestyle();
-const home = Family.home(lifestyle[1]);
-console.log(`You were raised by ${raisedBy} and had a ${lifestyle[0].toLowerCase()} lifestyle, living ${home}.`);
-console.log(Life.childhood());
 
 console.log('');
 const lifeEvents = Life.eventCount(config.age);

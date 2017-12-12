@@ -601,7 +601,7 @@ const backgrounds = {
         'I\'d rather eat my armor than admit when I\'m wrong.',
       ],
       other: {
-        'Other': ['Officer', 'Scout', 'Infantry', 'Cavalry', 'Healer', 'Quartermaster', 'Standard bearer', 'Support staff (cook, blacksmith, or the like)']
+        'Position': ['Officer', 'Scout', 'Infantry', 'Cavalry', 'Healer', 'Quartermaster', 'Standard bearer', 'Support staff (cook, blacksmith, or the like)']
       }
     },
     {

@@ -1,4 +1,5 @@
 const random = require('./random');
+const Life = require('./life');
 
 const halfRaces = {
   'Half-Elf': halfElf,
@@ -68,6 +69,14 @@ module.exports = {
     if (random.percent() > 50) { options.reverse(); }
     return { mother: options[0], father: options[1] };
   },
+  absentParent: function() {
+    switch(random.dice('1d4')) {
+      case 1: return 'is dead. ' + Life.causeOfDeath();
+      case 2: return 'was imprisoned, enslaved, or otherwise taken away.';
+      case 3: return 'abandoned you.';
+      case 4: return 'disappeared to an unknown fate.';
+    }
+  },
   siblings: function (race) {
     const r = random.dice('1d10');
     const mod = (race.includes('dwarf') || race.includes('elf')) ? -2 : 0;
@@ -91,21 +100,33 @@ module.exports = {
       case r < 19: return ['Aristocratic', +40];
     }
   },
-  raisedBy: function () {
-    // TODO: Absent parent.
+  raisedBy: function (knewParents) {
     const r = random.percent();
-    switch (true) {
-      case r < 2: return 'nobody';
-      case r < 3: return 'an institution, such as an asylum';
-      case r < 4: return 'a temple';
-      case r < 6: return 'an ophanage';
-      case r < 8: return 'a guardian';
-      case r < 16: return 'your paternal or maternal aunt, uncle, or both; or extended family such as a tribe or clan';
-      case r < 26: return 'your paternal or maternal grandparent(s)';
-      case r < 36: return 'your adoptive family (same or different race)';
-      case r < 56: return 'your single father or step father';
-      case r < 76: return 'your single mother or step mother';
-      case r < 101: return 'your mother and father';
+    if (knewParents) {
+      switch (true) {
+        case r < 2: return { name: 'nobody', absent: ['mother', 'father'] };
+        case r < 3: return { name: 'an institution, such as an asylum', absent: ['mother', 'father'] };
+        case r < 4: return { name: 'a temple', absent: ['mother', 'father'] };
+        case r < 6: return { name: 'an ophanage', absent: ['mother', 'father'] };
+        case r < 8: return { name: 'a guardian', absent: ['mother', 'father'] };
+        case r < 16: return { name: 'your paternal or maternal aunt, uncle, or both; or extended family such as a tribe or clan', absent: ['mother', 'father'] };
+        case r < 26: return { name: 'your paternal or maternal grandparent(s)', absent: ['mother', 'father'] };
+        case r < 36: return { name: 'your adoptive family (same or different race)', absent: ['mother', 'father'] };
+        case r < 56: return { name: 'your single father or step father', absent: ['mother'] };
+        case r < 76: return { name: 'your single mother or step mother', absent: ['father'] };
+        case r < 101: return { name: 'your mother and father', absent: [] };
+      }
+    } else {
+      switch (true) {
+        case r < 6: return   { name: 'nobody', absent: ['mother', 'father'] };
+        case r < 11: return  { name: 'an institution, such as an asylum', absent: ['mother', 'father'] };
+        case r < 16: return  { name: 'a temple', absent: ['mother', 'father'] };
+        case r < 21: return  { name: 'an ophanage', absent: ['mother', 'father'] };
+        case r < 31: return  { name: 'a guardian', absent: ['mother', 'father'] };
+        case r < 51: return  { name: 'your paternal or maternal aunt, uncle, or both; or extended family such as a tribe or clan', absent: ['mother', 'father'] };
+        case r < 81: return  { name: 'your paternal or maternal grandparent(s)', absent: ['mother', 'father'] };
+        case r < 101: return { name: 'your adoptive family (same or different race)', absent: ['mother', 'father'] };
+      }
     }
   },
   home: function (mod) {
