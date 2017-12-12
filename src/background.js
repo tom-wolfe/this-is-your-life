@@ -3,7 +3,7 @@ const random = require('./random');
 const backgrounds = {
   'PHB': [
     {
-      name: 'Acolyte', reasons: [
+      name: 'Acolyte', reasons: [ // TODO: Other.
         'you ran away from home at an early age and found refuge in a temple.',
         'your family gave you to a temple, since they were unable or unwilling to care for you.',
         'you grew up in a household with strong religious convictions. Entering the service of one or more gods seemed natural.',
@@ -47,7 +47,7 @@ const backgrounds = {
       ]
     },
     {
-      name: 'Charlatan', reasons: [
+      name: 'Charlatan', reasons: [ // TODO: Other.
         'you were left to your own devices, and your knack for manipulating others helped you survive.',
         'you learned early on that people are gullible and easy to exploit.',
         'you often got in trouble, but you managed to talk your way out of it every time.',
@@ -94,7 +94,7 @@ const backgrounds = {
       ]
     },
     {
-      name: 'Criminal / Spy', reasons: [
+      name: 'Criminal', reasons: [
         'you resented authority in my younger days and saw a life of crime as the best way to fight against tyranny and oppression.',
         'necessity forced you to take up the life, since it was the only way you could survive.',
         'you fell in with a gang of reprobates and ne\'er-do-wells, and you learned your specialty from them.',
@@ -102,39 +102,42 @@ const backgrounds = {
         'you left home and found a place in a thieves\' guild or some other criminal organization.',
         'you were always bored, so you turned to crime to pass the time and discovered you were quite good at it.',
       ],
+      other: {
+        'Criminal Specialty': ['Blackmailer', 'Burglar', 'Enforcer', 'Fence', 'Highway robber', 'Hired killer', 'Pickpocket', 'Smuggler']
+      },
       traits: [
         'I always have a plan for what to do when things go wrong.',
         'I am always calm, no matter what the situation. I never raise my voice or let my emotions control me.',
         'The first thing I do in a new place is note the locations of everything valuable—or where such things could be hidden.',
         'I would rather make a new friend than a new enemy.',
         'I am incredibly slow to trust. Those who seem the fairest often have the most to hide.',
-        'I don’t pay attention to the risks in a situation. Never tell me the odds.',
-        'The best way to get me to do something is to tell me I can’t do it.',
+        'I don\'t pay attention to the risks in a situation. Never tell me the odds.',
+        'The best way to get me to do something is to tell me I can\'t do it.',
         'I blow up at the slightest insult.'
       ],
       ideals: [
-        'Honor. I don’t steal from others in the trade. (Lawful)',
+        'Honor. I don\'t steal from others in the trade. (Lawful)',
         'Freedom. Chains are meant to be broken, as are those who would forge them. (Chaotic)',
         'Charity. I steal from the wealthy so that I can help people in need. (Good)',
         'Greed. I will do whatever it takes to become wealthy. (Evil)',
-        'People. I’m loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care. (Neutral)',
-        'Redemption. There’s a spark of good in everyone. (Good)'
+        'People. I\'m loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care. (Neutral)',
+        'Redemption. There\'s a spark of good in everyone. (Good)'
       ],
       bonds: [
-        'I’m trying to pay off an old debt I owe to a generous benefactor.',
+        'I\'m trying to pay off an old debt I owe to a generous benefactor.',
         'My ill-gotten gains go to support my family.',
         'Something important was taken from me, and I aim to steal it back.',
         'I will become the greatest thief that ever lived.',
-        'I’m guilty of a terrible crime. I hope I can redeem myself for it.',
+        'I\'m guilty of a terrible crime. I hope I can redeem myself for it.',
         'Someone I loved died because of I mistake I made. That will never happen again.',
       ],
       flaws: [
-        'When I see something valuable, I can’t think about anything but how to steal it.',
+        'When I see something valuable, I can\'t think about anything but how to steal it.',
         'When faced with a choice between money and my friends, I usually choose the money.',
-        'If there’s a plan, I’ll forget it. If I don’t forget it, I’ll ignore it.',
-        'I have a “tell” that reveals when I’m lying.',
+        'If there\'s a plan, I\'ll forget it. If I don\'t forget it, I\'ll ignore it.',
+        'I have a "tell" that reveals when I\'m lying.',
         'I turn tail and run when things look bad.',
-        'An innocent person is in prison for a crime that I committed. I’m okay with that.',
+        'An innocent person is in prison for a crime that I committed. I\'m okay with that.',
       ]
     },
     {
@@ -145,7 +148,7 @@ const backgrounds = {
         'you saw a bard perform once, and you knew from that moment on what you were born to do.',
         'you earned coin by performing on street corners and eventually made a name for yourself.',
         'a traveling entertainer took you in and taught you the trade.',
-      ],
+      ], // TODO: Other.
       traits: [
         'I know a story relevant to almost every situation.',
         'Whenever I come to a new place, I collect local rumors and spread gossip.',
@@ -192,10 +195,10 @@ const backgrounds = {
       ],
       traits: [
         'I judge people by their actions, not their words.',
-        'If someone is in trouble, I’m always ready to lend help.',
+        'If someone is in trouble, I\'m always ready to lend help.',
         'When I set my mind to something, I follow through no matter what gets in my way.',
         'I have a strong sense of fair play and always try to find the most equitable solution to arguments.',
-        'I’m confident in my own abilities and do what I can to instill confidence in others.',
+        'I\'m confident in my own abilities and do what I can to instill confidence in others.',
         'Thinking is for other people. I prefer action.',
         'I misuse long words in an attempt to sound smarter.',
         'I get bored easily. When am I going to get on with my destiny?',
@@ -205,7 +208,7 @@ const backgrounds = {
         'Fairness. No one should get preferential treatment before the law, and no one is above the law. (Lawful)',
         'Freedom. Tyrants must not be allowed to oppress the people. (Chaotic)',
         'Might. If I become strong, I can take what I want—what I deserve. (Evil)',
-        'Sincerity. There’s no good in pretending to be something I’m not. (Neutral)',
+        'Sincerity. There\'s no good in pretending to be something I\'m not. (Neutral)',
         'Destiny. Nothing and no one can steer me away from my higher calling. (Any)',
       ],
       bonds: [
@@ -218,12 +221,26 @@ const backgrounds = {
       ],
       flaws: [
         'The tyrant who rules my land will stop at nothing to see me killed.',
-        'I’m convinced of the significance of my destiny, and blind to my shortcomings and the risk of failure.',
+        'I\'m convinced of the significance of my destiny, and blind to my shortcomings and the risk of failure.',
         'The people who knew me when I was young know my shameful secret, so I can never go home again.',
         'I have a weakness for the vices of the city, especially hard drink.',
         'Secretly, I believe that things would be better if I were a tyrant lording over the land.',
         'I have trouble trusting in my allies.',
-      ]
+      ],
+      other: {
+        'Defining Event': [
+          'I stood up to a tyrant\'s agents.',
+          'I saved people during a natural disaster.',
+          'I stood alone against a terrible monster.',
+          'I stole from a corrupt merchant to help the poor.',
+          'I led a militia to fight off an invading army.',
+          'I broke into a tyrant\'s castle and stole weapons to arm the people.',
+          'I trained the peasantry to use farm implements as weapons against a tyrant\'s soldiers.',
+          'A lord rescinded an unpopular decree after I led a symbolic act of protest against it.',
+          'A celestial, fey, or similar creature gave me a blessing or revealed my secret origin.',
+          'Recruited into a lord\'s army, I rose to leadership and was commended for my heroism.',
+        ]
+      }
     },
     {
       name: 'Guild Artisan / Merchant', reasons: [
@@ -233,7 +250,7 @@ const backgrounds = {
         'you were always good with your hands, so you took the opportunity to learn a trade.',
         'you wanted to get away from your home situation and start a new life.',
         'you learned the essentials of your craft from a mentor but had to join the guild to finish your training.',
-      ],
+      ], // TODO: Other.
       traits: [
         'I believe that anything worth doing is worth doing right. I can\'t help it-I\'m a perfectionist.',
         'I\'m a snob who looks down on those who can\'t appreciate fine art.',
@@ -277,7 +294,7 @@ const backgrounds = {
         'you felt compelled to forsake your past, but did so with great reluctance, and sometimes you regret making that decision.',
         'you lost everything - your home, your family, your friends. Going it alone was all you could do.',
         'society\'s decadence disgusted you, so you decided to leave it behind.',
-      ],
+      ], // TODO: Other.
       traits: [
         'I\'ve been isolated for so long that I rarely speak, preferring gestures and the occasional grunt.',
         'I am utterly serene, even in the face of disaster.',
@@ -321,13 +338,13 @@ const backgrounds = {
         'your family has a title, but none of your ancestors have distinguished themselves since they gained it.',
         'your family is filled with remarkable people. You hope to live up to their example.',
         'you hope to increase your family\'s power and influence.',
-      ],
+      ], // TODO: Other.
       traits: [
         'My eloquent flattery makes everyone I talk to feel like the most wonderful and important person in the world.',
         'The common folk love me for my kindness and generosity.',
         'No one could doubt by looking at my regal bearing that I am a cut above the unwashed masses.',
         'I take great pains to always look my best and follow the latest fashions.',
-        'I don’t like to get my hands dirty, and I won’t be caught dead in unsuitable accommodations.',
+        'I don\'t like to get my hands dirty, and I won\'t be caught dead in unsuitable accommodations.',
         'Despite my noble birth, I do not place myself above other folk. We all have the same blood.',
         'My favor, once lost, is lost forever.',
         'If you do me an injury, I will crush you, ruin your name, and salt your fields.',
@@ -342,7 +359,7 @@ const backgrounds = {
       ],
       bonds: [
         'I will face any challenge to win the approval of my family.',
-        'My house’s alliance with another noble family must be sustained at all costs.',
+        'My house\'s alliance with another noble family must be sustained at all costs.',
         'Nothing is more important than the other members of my family.',
         'I am in love with the heir of a family that my family despises.',
         'My loyalty to my sovereign is unwavering.',
@@ -351,7 +368,7 @@ const backgrounds = {
       flaws: [
         'I secretly believe that everyone is beneath me.',
         'I hide a truly scandalous secret that could ruin my family forever.',
-        'I too often hear veiled insults and threats in every word addressed to me, and I’m quick to anger.',
+        'I too often hear veiled insults and threats in every word addressed to me, and I\'m quick to anger.',
         'I have an insatiable desire for carnal pleasures.',
         'In fact, the world does revolve around me.',
         'By my words and actions, I often bring shame to my family.',
@@ -365,7 +382,7 @@ const backgrounds = {
         'your people lived on the edges of civilization, and you learned the methods of survival from your family.',
         'after a tragedy, you retreated to the wilderness, leaving your old life behind.',
         'your family moved away from civilization, and you learned to adapt to your new environment.',
-      ],
+      ], // TODO: Other.
       traits: [
         'I\'m driven by a wanderlust that led me away from home.',
         'I watch over my friends as if they were a litter of newborn pups.',
@@ -412,13 +429,13 @@ const backgrounds = {
       ],
       traits: [
         'I use polysyllabic words that convey the impression of great erudition.',
-        'I’ve read every book in the world’s greatest libraries—or I like to boast that I have.',
-        'I’m used to helping out those who aren’t as smart as I am, and I patiently explain anything and everything to others.',
-        'There’s nothing I like more than a good mystery.',
-        'I’m willing to listen to every side of an argument before I make my own judgment.',
+        'I\'ve read every book in the world\'s greatest libraries—or I like to boast that I have.',
+        'I\'m used to helping out those who aren\'t as smart as I am, and I patiently explain anything and everything to others.',
+        'There\'s nothing I like more than a good mystery.',
+        'I\'m willing to listen to every side of an argument before I make my own judgment.',
         'I … speak … slowly … when talking … to idiots, … which … almost … everyone … is … compared … to me.',
         'I am horribly, horribly awkward in social situations.',
-        'I’m convinced that people are always trying to steal my secrets.',
+        'I\'m convinced that people are always trying to steal my secrets.',
       ],
       ideals: [
         'Knowledge. The path to power and self-improvement is through knowledge. (Neutral)',
@@ -432,8 +449,8 @@ const backgrounds = {
         'It is my duty to protect my students.',
         'I have an ancient text that holds terrible secrets that must not fall into the wrong hands.',
         'I work to preserve a library, university, scriptorium, or monastery.',
-        'My life’s work is a series of tomes related to a specific field of lore.',
-        'I’ve been searching my whole life for the answer to a certain question.',
+        'My life\'s work is a series of tomes related to a specific field of lore.',
+        'I\'ve been searching my whole life for the answer to a certain question.',
         'I sold my soul for knowledge. I hope to do great deeds and win it back.',
       ],
       flaws: [
@@ -442,8 +459,10 @@ const backgrounds = {
         'Unlocking an ancient mystery is worth the price of a civilization.',
         'I overlook obvious solutions in favor of complicated ones.',
         'I speak without really thinking through my words, invariably insulting others.',
-        'I can’t keep a secret to save my life, or anyone else’s.',
-      ]
+        'I can\'t keep a secret to save my life, or anyone else\'s.',
+      ], other: {
+        'Specialty': ['Alchemist', 'Astronomer', 'Discredited academic', 'Librarian', 'Professor', 'Researcher', 'Wizard\'s apprentice', 'Scribe']
+      }
     },
     {
       name: 'Sailor', reasons: [
@@ -453,7 +472,7 @@ const backgrounds = {
         'you needed to escape your community quickly, so you stowed away on a ship. When the crew found you, you were forced to work for your passage.',
         'reavers attacked your community, so you found refuge on a ship until you could seek vengeance.',
         'you had few prospects where you were living, so you left to find your fortune elsewhere.'
-      ],
+      ], // TODO: Other.
       traits: [
         'My friends know they can rely on me, no matter what.',
         'I work hard so that I can play hard when the work is done.',
@@ -499,10 +518,10 @@ const backgrounds = {
         'invaders attacked your homeland. It was your duty to take up arms in defense of your people.'
       ],
       traits: [
-        'I’m always polite and respectful.',
-        'I’m haunted by memories of war. I can’t get the images of violence out of my mind.',
-        'I’ve lost too many friends, and I’m slow to make new ones.',
-        'I’m full of inspiring and cautionary tales from my military experience relevant to almost every combat situation.',
+        'I\'m always polite and respectful.',
+        'I\'m haunted by memories of war. I can\'t get the images of violence out of my mind.',
+        'I\'ve lost too many friends, and I\'m slow to make new ones.',
+        'I\'m full of inspiring and cautionary tales from my military experience relevant to almost every combat situation.',
         'I can stare down a hell hound without flinching.',
         'I enjoy being strong and like breaking things.',
         'I have a crude sense of humor.',
@@ -513,14 +532,14 @@ const backgrounds = {
         'Responsibility. I do what I must and obey just authority. (Lawful)',
         'Independence. When people follow orders blindly, they embrace a kind of tyranny. (Chaotic)',
         'Might. In life as in war, the stronger force wins. (Evil)',
-        'Live and Let Live. Ideals aren’t worth killing over or going to war for. (Neutral)',
+        'Live and Let Live. Ideals aren\'t worth killing over or going to war for. (Neutral)',
         'Nation. My city, nation, or people are all that matter. (Any)',
       ],
       bonds: [
         'I would still lay down my life for the people I served with.',
         'Someone saved my life on the battlefield. To this day, I will never leave a friend behind.',
         'My honor is my life.',
-        'I’ll never forget the crushing defeat my company suffered or the enemies who dealt it.',
+        'I\'ll never forget the crushing defeat my company suffered or the enemies who dealt it.',
         'Those who fight beside me are those worth dying for.',
         'I fight for those who cannot fight for themselves.',
       ],
@@ -530,8 +549,11 @@ const backgrounds = {
         'I made a terrible mistake in battle that cost many lives—and I would do anything to keep that mistake secret.',
         'My hatred of my enemies is blind and unreasoning.',
         'I obey the law, even if the law causes misery.',
-        'I’d rather eat my armor than admit when I’m wrong.',
-      ]
+        'I\'d rather eat my armor than admit when I\'m wrong.',
+      ],
+      other: {
+        'Other': ['Officer', 'Scout', 'Infantry', 'Cavalry', 'Healer', 'Quartermaster', 'Standard bearer', 'Support staff (cook, blacksmith, or the like)']
+      }
     },
     {
       name: 'Urchin', reasons: [
@@ -541,7 +563,7 @@ const backgrounds = {
         'a notorious thief looked after you and other orphans, and you spied and stole to earn your keep.',
         'one day you woke up on the streets, alone and hungry, with no memory of your early childhood.',
         'your parents died, leaving no one to look after you. You raised yourself.'
-      ],
+      ], // TODO: Other
       traits: [
         'I hide scraps of food and trinkets away in my pockets.',
         'I ask a lot of questions.',
@@ -619,6 +641,10 @@ module.exports = {
   },
   flaw: function (background) {
     return random.element(background.flaws || []);
+  },
+  other: function (background) {
+    if (!background.other) return [];
+    return Object.keys(background.other).map(o => [o, random.element(background.other[o])]);
   },
   random: function (sources = 'ALL') {
     return random.sourcedElement(backgrounds, sources);

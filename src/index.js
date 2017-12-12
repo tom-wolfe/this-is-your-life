@@ -43,8 +43,9 @@ console.log('Trait:', Background.trait(config.background));
 console.log('Ideal:', Background.ideal(config.background));
 console.log('Bond:', Background.bond(config.background));
 console.log('Flaw:', Background.flaw(config.background));
-
-// TODO: Other class lists.
+Background.other(config.background).forEach(o => {
+  console.log(o[0] + ':', o[1]);
+});
 
 console.log('');
 console.log('You were born', Birth.place() + '.');
