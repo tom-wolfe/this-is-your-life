@@ -144,7 +144,7 @@ const classes = {
           'Your mentor was a wise treant who taught you to think in terms of years and decades rather than days or months.',
           'You were tutored by a dryad who watched over a slumbering portal to the Abyss. During your training, you were tasked with watching for hidden threats to the world.',
           'Your tutor always interacted with you in the form of a falcon. You never saw the tutor\'s humanoid form.',
-          'You were one of several youngsters who were mentored by an old druid, until one ofyour fellow pupils betrayed your group and killed your master.',
+          'You were one of several youngsters who were mentored by an old druid, until one of your fellow pupils betrayed your group and killed your master.',
           'Your mentor has appeared to you only in visions. You have yet to meet this person, and you are not sure such a person exists in mortal form.',
           'Your mentor was a werebear who taught you to treat all living things with equal regard.',
         ]

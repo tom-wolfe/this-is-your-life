@@ -4,6 +4,7 @@
   "description": "Generate character backstories based on the Xanathar's Guide to Everything 'This Is Your Life' tables.",
   "main": "./src/index.js",
   "scripts": {
+    "build": "webpack",
     "start": "webpack-dev-server",
     "test": "jasmine --config=jasmine.json"
   },

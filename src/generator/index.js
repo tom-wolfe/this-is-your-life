@@ -59,6 +59,13 @@ function upbringing (character) {
   character.lifestyle = Family.lifestyle();
   character.home = Family.home(character.lifestyle);
   character.childhood = Life.childhood(character.charismaModifier || 0);
+
+  if (character.raisedBy.absent.includes('mother')) {
+    character.parents.mother.absent = Family.absentParent();
+  }
+  if (character.raisedBy.absent.includes('father')) {
+    character.parents.father.absent = Family.absentParent();
+  }
 }
 
 function siblings (character) {
@@ -96,6 +103,7 @@ module.exports = function (config = {}) {
   background(character);
   adventuringClass(character);
   parents(character);
+  siblings(character);
   upbringing(character);
   events(character);
   trinket(character);

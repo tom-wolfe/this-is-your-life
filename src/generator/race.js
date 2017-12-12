@@ -20,7 +20,7 @@ const monsterOther = {
     'At a young age, you adopted a human religion and now serve it faithfully.',
     'You received divine insight that sent you on your path, and occasionally receive new visions that guide you.',
     'Your sworn enemy is an ally of your people, forcing you to leave your tribe to gain vengeance.',
-    'An evil entity corrupted your. people\'s society.',
+    'An evil entity corrupted your people\'s society.',
     'An injury or strange event caused you to lose all memory of your past, but occasional flashes of it return to you.',
   ]
 };

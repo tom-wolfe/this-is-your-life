@@ -115,7 +115,7 @@ function tragedy() {
     case 6: return 'War ravaged your home community, reducing everything to rubble and ruin. in the aftermath, you either helped your town rebuild or moved somewhere else.';
     case 7: return 'A lover disappeared without a trace. You have been looking for that person ever since.';
     case 8: return 'A terrible blight in your home community caused crops to fail, and many starved. You lost a sibling or some other family member.';
-    case 9: return 'You did something that brought terrible shame to you in the eyes of your family. You might have been involved in a scandal, dabbled in dark magic, or offended someone important. The attitude ofyour family members toward you becomes indifferent at best, though they might eventually forgive you.';
+    case 9: return 'You did something that brought terrible shame to you in the eyes of your family. You might have been involved in a scandal, dabbled in dark magic, or offended someone important. The attitude of your family members toward you becomes indifferent at best, though they might eventually forgive you.';
     case 10: return 'For a reason you were never told, you were exiled from your community. You then either wandered in the wilderness for a time or promptly found a new place to live.';
     case 11: return 'A romantic relationship ended. ' + ((random.dice('1d6') % 2 === 0) ? 'with bad feelings.' : 'but it was amicable.');
     case 12: return `A current or prospective romantic partner of yours died. Cause of death: ${causeOfDeath()}.` + (random.dice('1d12') === 1 ? ' It was your fault.' : '');

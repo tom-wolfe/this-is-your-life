@@ -5,7 +5,7 @@ module.exports = {
   context: path.join(__dirname, './src'),
   target: 'web',
   entry: [
-    './index.js'
+    './index.js', './styles/index.scss'
   ],
   output: {
     path: path.join(__dirname, 'dist'),

@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>This Is Your Life</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <h1>This Is Your Life</h1>
-    <div id="character"></div>
-  </body>
+
+<head>
+  <title>This Is Your Life</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">This Is Your Life</a>
+  </nav>
+
+  <main role="main">
+    <div class="jumbotron">
+      <div class="container">
+        <h1>This Is Your Life!</h1>
+        <p>
+          This is a simple generator that automates the process of rolling on all the character generation tables that can be found
+          in the Dungeons &amp; Dragons 5th Edition Player Handbook, Volo's Guide to Monsters, and Xanathar's Guide to Everything.
+          Click the button below to create a character!</p>
+          <a id="generate" href="#" class="btn btn-primary" role="button">Roll again!
+            <i class="fa fa-chevron-right"></i>
+          </a>
+      </div>
+    </div>
+    <div class="container">
+      <div id="character"></div>
+      <hr>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container bt-light mt-4 pt-4 pb-4">
+      <div class="text-right">
+        <small>
+          <div>Created by Thomas R. Wolfe</div>
+          <div>All content owned by
+            <a href="https://www.wizards.com" target="_blank">Wizards of the Coast</a>
+          </div>
+          <div>
+            <a href="https://github.com/trwolfe13/this-is-your-life/" target="_blank">
+              <i class="fa fa-github"></i> View on Github</a>
+          </div>
+        </small>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
 </html>
