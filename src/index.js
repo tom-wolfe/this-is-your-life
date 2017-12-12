@@ -62,17 +62,14 @@ console.log('You were born', Birth.place() + '.');
 
 config.knewParents = Family.knewParents();
 if (!config.knewParents) {
-  console.log('You didn\'t know who your parents were.')
+  console.log('You don\'t know who your parents are.')
 } else {
   const parents = Family.parents(config.race);
   if (parents.mother === parents.father) {
-    console.log(`Your mother and father were both ${parents.mother}s.`);
+    console.log(`Your mother and father are both ${parents.mother}s. Your mother ${Life.occupation()}, while your father ${Life.occupation()}.`);
   } else {
-    console.log(`Your mother was a ${parents.mother}, but your father was a ${parents.father}.`);
+    console.log(`Your mother is ${parents.mother} and ${Life.occupation()}, but your father is ${parents.father} and ${Life.occupation()}.`);
   }
-
-  console.log(`Your mother ${Life.occupation()}.`);
-  console.log(`Your father ${Life.occupation()}.`);
 }
 
 console.log('\n:: Childhood ::');
