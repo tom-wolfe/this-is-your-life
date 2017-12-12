@@ -38,6 +38,8 @@ if (bgReason) {
 const cReason = Class.reason(config.class);
 console.log(`You became a ${config.class.name} because ${cReason}`);
 
+// TODO: Other class lists.
+
 console.log('');
 console.log('You were born', Birth.place() + '.');
 
