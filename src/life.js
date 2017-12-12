@@ -208,7 +208,7 @@ function occupation() {
   const r = random.percent();
   switch (true) {
     case r < 6: return 'works as an academic';
-    case r < 11: return 'works as an adventuring ' + Class.random();
+    case r < 11: return 'works as an adventuring ' + Class.random().name;
     case r < 12: return 'is an aristocrat';
     case r < 27: return 'works as an artisan or guild member';
     case r < 32: return 'is a criminal';
