@@ -1,6 +1,6 @@
 {
   "name": "this-is-your-life",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate character backstories based on the Xanathar's Guide to Everything 'This Is Your Life' tables.",
   "main": "./src/index.js",
   "scripts": {
