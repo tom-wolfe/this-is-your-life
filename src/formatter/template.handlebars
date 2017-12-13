@@ -1,0 +1,84 @@
+<div id="character">
+  <h3>Overview</h3>
+
+  <p>You are a {{age}} year old {{lower alignment.name}} {{#if subrace}}{{lower subrace.name}}{{else}}{{lower race.name}}{{/if}} {{lower background.name}} adventuring as a {{lower class.name}}.</p>
+
+  <p>
+  {{#if backgroundReason}}
+    You became a {{lower background.name}} because {{backgroundReason}}<br>
+  {{/if}}
+  You became a {{lower class.name}} because {{classReason}}
+  </p>
+
+  {{#if raceOther}}
+  <h3>Racial ({{#if subrace}}{{subrace.name}}{{else}}{{race.name}}{{/if}})</h3>
+    <p>{{#each raceOther}}<strong>{{name}}:</strong> {{value}}<br>{{/each}}</p>
+  {{/if}}
+
+  <p>You became a acolyte because you ran away from home at an early age and found refuge in a temple.
+    <br> You became a ranger because you have seen what happens when the monsters come out from the dark. You took it upon yourself
+    to become the first line of defense against the evils that lie beyond civilization's borders.</p>
+
+  <h3>Background ({{background.name}})</h3>
+  <p>
+    <strong>Trait:</strong> {{backgroundTrait}}<br>
+    <strong>Ideal:</strong> {{backgroundIdeal.ideal}}<br>
+    <strong>Bond:</strong> {{backgroundBond}}<br>
+    <strong>Flaw:</strong> {{backgroundFlaw}}<br>
+    {{#each backgroundOther}}<strong>{{name}}:</strong> {{value}}<br>{{/each}}
+  </p>
+
+  {{#if classOther}}
+  <h3>Class ({{class.name}})</h3>
+  <p>{{#each classOther}}<strong>{{name}}:</strong> {{value}}<br>{{/each}}</p>
+  {{/if}}
+
+  <h3>Family</h3>
+
+  {{#unless knewParents}}
+  <p>You don't know who your parents are.</p>
+  {{else}}
+  {{#compare parents.mother.race parents.father.race}}
+  <p>
+    {{#compare parents.mother.race "!==" race.name}} Your mother and father are both {{lower parents.mother.race}}s.{{/compare}}
+    Your mother {{parents.mother.occupation}}, while your father {{parents.father.occupation}}.
+  </p>
+  {{/compare}}
+  {{#compare parents.mother.race "!==" parents.father.race}}
+  <p>
+    Your mother is a {{lower parents.mother.race}} and {{parents.mother.occupation}}, but your father is a {{lower parents.father.race}}
+    and {{parents.father.occupation}}.
+  </p>
+  {{/compare}}
+  {{/unless}}
+  
+  {{#unless knewParents}}
+  <p>You don't know if you have any siblings.</p>
+  {{else}} {{#unless siblings.length}}
+  <p>You were an only child.</p>
+  {{else}}
+  <p>You had {{siblings.length}} siblings.</p>
+  <ul>
+    {{#each siblings}}
+    <li>a {{relativeAge}} {{relationship}} who {{occupation}}. They are {{status}} {{attitude}}</li>{{/each}}
+  </ul>
+  {{/unless}} {{/unless}}
+
+  <h3>Upbringing</h3>
+  <p>You were born {{birthplace}}.</p>
+  <p>You were raised by {{raisedBy.name}} and had a {{lower lifestyle.name}} lifestyle, living {{home}}.</p>
+
+  {{#if mother.absent}}
+  <p>Your mother ${mother.absent}</p>{{/if}} {{#if father.absent}}
+  <p>Your father ${father.absent}</p>{{/if}}
+
+  <h3>Life Events ({{events.length}})</h3>
+  <ul>
+    {{#each events}}
+    <li>{{this}}</li>
+    {{/each}}
+  </ul>
+
+  <h3>Trinket</h3>
+  <p>Currently in your possession you have {{trinket}}</p>
+</div>

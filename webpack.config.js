@@ -18,24 +18,18 @@ module.exports = {
   ],
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: ['babel-loader']
-      },
-      {
-        test: /\.json$/,
-        use: ['json-loader']
-      },
-      {
-        test: /\.scss$/,
-        loader: 'style-loader!css-loader!sass-loader',
-      }
+      { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader'] },
+      { test: /\.json$/, use: ['json-loader'] },
+      { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' },
+      { test: /\.handlebars$/, use: ['raw-loader'] }
     ]
   },
   resolve: {
     modules: [
       path.join(__dirname, 'node_modules')
-    ]
+    ],
+    alias: {
+      handlebars: 'handlebars/dist/handlebars.min.js'
+    }
   }
 }
