@@ -1,0 +1,38 @@
+{
+  "LG": {
+    "abbreviation": "LG",
+    "name": "Lawful Good"
+  },
+  "LN": {
+    "abbreviation": "LN",
+    "name": "Lawful Neutral"
+  },
+  "LE": {
+    "abbreviation": "LE",
+    "name": "Lawful Evil"
+  },
+  "NG": {
+    "abbreviation": "NG",
+    "name": "Neutral Good"
+  },
+  "TN": {
+    "abbreviation": "TN",
+    "name": "True Neutral"
+  },
+  "NE": {
+    "abbreviation": "NE",
+    "name": "Neutral Evil"
+  },
+  "CG": {
+    "abbreviation": "CG",
+    "name": "Chaotic Good"
+  },
+  "CN": {
+    "abbreviation": "CN",
+    "name": "Chaotic Neutral"
+  },
+  "CE": {
+    "abbreviation": "CE",
+    "name": "Chaotic Evil"
+  }
+}

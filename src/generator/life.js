@@ -1,6 +1,8 @@
 const Class = require('./class');
 const Item = require('./item');
 
+const alignments = require('./data/alignments.json');
+
 const random = require('./random');
 
 function adventure() {
@@ -232,13 +234,13 @@ function occupation() {
 function alignment() {
   const r = random.dice('3d6');
   switch (true) {
-    case r < 4: return (random.bool()) ? 'Chaotic Evil' : 'Chaotic Neutral';
-    case r < 6: return 'Lawful Evil';
-    case r < 9: return 'Neutral Evil';
-    case r < 13: return 'Neutral';
-    case r < 16: return 'Neutral Good';
-    case r < 18: return (random.bool()) ? 'Lawful Good' : 'Lawful Neutral';
-    case r < 19: return (random.bool()) ? 'Chaotic Good' : 'Chaotic Neutral';
+    case r < 4: return (random.bool()) ? alignments.CE : alignments.CN;
+    case r < 6: return alignments.LE;
+    case r < 9: return alignments.NE;
+    case r < 13: return alignments.TN;
+    case r < 16: return alignments.NG;
+    case r < 18: return (random.bool()) ? alignments.LG : alignments.LN;
+    case r < 19: return (random.bool()) ? alignments.CG : alignments.CN;
   }
 }
 

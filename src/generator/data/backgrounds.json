@@ -21,12 +21,30 @@
         "I've spent so long in the temple that I have little practical experience dealing with people in the outside world."
       ],
       "ideals": [
-        "Tradition. The ancient traditions of worship and sacrifice must be preserved and upheld.",
-        "Charity. I always try to help those in need, no matter what the personal cost.",
-        "Change. We must help bring about the changes the gods are constantly working in the world.",
-        "Power. I hope to one day rise to the top of my faith's religious hierarchy.",
-        "Faith. I trust that my deity will guide my actions. I have faith that if I work hard, things will go well.",
-        "Aspiration. I seek to prove myself worthy of my god's favor by matching my actions against his or her teachings."
+        {
+          "ideal": "Tradition. The ancient traditions of worship and sacrifice must be preserved and upheld.",
+          "alignments": []
+        },
+        {
+          "ideal": "Charity. I always try to help those in need, no matter what the personal cost.",
+          "alignments": []
+        },
+        {
+          "ideal": "Change. We must help bring about the changes the gods are constantly working in the world.",
+          "alignments": []
+        },
+        {
+          "ideal": "Power. I hope to one day rise to the top of my faith's religious hierarchy.",
+          "alignments": []
+        },
+        {
+          "ideal": "Faith. I trust that my deity will guide my actions. I have faith that if I work hard, things will go well.",
+          "alignments": []
+        },
+        {
+          "ideal": "Aspiration. I seek to prove myself worthy of my god's favor by matching my actions against his or her teachings.",
+          "alignments": []
+        }
       ],
       "bonds": [
         "I would die to recover an ancient relic of my faith that was lost long ago.",
@@ -66,12 +84,50 @@
         "I pocket anything I see that might have some value."
       ],
       "ideals": [
-        "Independence. I am a free spirit - no one tells me what to do. (Chaotic)",
-        "Fairness. I never target people who can't afford to lose a few coins. (Lawful)",
-        "Charity. I distribute the money I acquire to the people who really need it. (Good)",
-        "Creativity. I never run the same con twice. (Chaotic)",
-        "Friendship. Material goods come and go. Bonds of friendship last forever. (Good)",
-        "Aspiration. I'm determined to make something of myself. (Any)"
+        {
+          "ideal": "Independence. I am a free spirit - no one tells me what to do.",
+          "alignments": [
+            "CG",
+            "CN",
+            "CE"
+          ]
+        },
+        {
+          "ideal": "Fairness. I never target people who can't afford to lose a few coins.",
+          "alignments": [
+            "LG",
+            "LN",
+            "LE"
+          ]
+        },
+        {
+          "ideal": "Charity. I distribute the money I acquire to the people who really need it.",
+          "alignments": [
+            "CG",
+            "NG",
+            "LG"
+          ]
+        },
+        {
+          "ideal": "Creativity. I never run the same con twice.",
+          "alignments": [
+            "CG",
+            "CN",
+            "CE"
+          ]
+        },
+        {
+          "ideal": "Friendship. Material goods come and go. Bonds of friendship last forever.",
+          "alignments": [
+            "CG",
+            "NG",
+            "LG"
+          ]
+        },
+        {
+          "ideal": "Aspiration. I'm determined to make something of myself.",
+          "alignments": []
+        }
       ],
       "bonds": [
         "I fleeced the wrong person and must work to ensure that this individual never crosses paths with me or those I care about.",
@@ -133,12 +189,54 @@
         "I blow up at the slightest insult."
       ],
       "ideals": [
-        "Honor. I don't steal from others in the trade. (Lawful)",
-        "Freedom. Chains are meant to be broken, as are those who would forge them. (Chaotic)",
-        "Charity. I steal from the wealthy so that I can help people in need. (Good)",
-        "Greed. I will do whatever it takes to become wealthy. (Evil)",
-        "People. I'm loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care. (Neutral)",
-        "Redemption. There's a spark of good in everyone. (Good)"
+        {
+          "ideal": "Honor. I don't steal from others in the trade.",
+          "alignments": [
+            "LG",
+            "LN",
+            "LE"
+          ]
+        },
+        {
+          "ideal": "Freedom. Chains are meant to be broken, as are those who would forge them.",
+          "alignments": [
+            "CG",
+            "CN",
+            "CE"
+          ]
+        },
+        {
+          "ideal": "Charity. I steal from the wealthy so that I can help people in need.",
+          "alignments": [
+            "CG",
+            "NG",
+            "LG"
+          ]
+        },
+        {
+          "ideal": "Greed. I will do whatever it takes to become wealthy.",
+          "alignments": [
+            "CE",
+            "NE",
+            "LE"
+          ]
+        },
+        {
+          "ideal": "People. I'm loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care.",
+          "alignments": [
+            "LN",
+            "CN",
+            "TN"
+          ]
+        },
+        {
+          "ideal": "Redemption. There's a spark of good in everyone.",
+          "alignments": [
+            "CG",
+            "NG",
+            "LG"
+          ]
+        }
       ],
       "bonds": [
         "I'm trying to pay off an old debt I owe to a generous benefactor.",
@@ -178,12 +276,12 @@
         "I change my mood or my mind as quickly as I change key in a song."
       ],
       "ideals": [
-        "Beauty. When I perform, I make the world better than it was. (Good)",
-        "Tradition. The stories, legends, and songs of the past must never be forgotten, for they teach us who we are. (Lawful)",
-        "Creativity. The world is in need of new ideas and bold action. (Chaotic)",
-        "Greed. I'm only in it for the money and fame. (Evil)",
-        "People. I like seeing the smiles on people's faces when I perform.that's all that matters. (Neutral)",
-        "Honesty. Art should reflect the soul; it should come"
+        { "ideal": "Beauty. When I perform, I make the world better than it was.", "alignments": ["CG", "NG", "LG"]},
+        { "ideal": "Tradition. The stories, legends, and songs of the past must never be forgotten, for they teach us who we are.", "alignments": ["LG", "LN", "LE"]},
+        { "ideal": "Creativity. The world is in need of new ideas and bold action.", "alignments": ["CG", "CN", "CE"]},
+        { "ideal": "Greed. I'm only in it for the money and fame.", "alignments": ["CE", "NE", "LE"]},
+        { "ideal": "People. I like seeing the smiles on people's faces when I perform.that's all that matters.", "alignments": ["LN", "CN", "TN"]},
+        { "ideal": "Honesty. Art should reflect the soul; it should come from within and reveal who we really are.", "alignments": []}
       ],
       "bonds": [
         "My instrument is my most treasured possession, and it reminds me of someone I love.",
@@ -237,12 +335,12 @@
         "I get bored easily. When am I going to get on with my destiny?"
       ],
       "ideals": [
-        "Respect. People deserve to be treated with dignity and respect. (Good)",
-        "Fairness. No one should get preferential treatment before the law, and no one is above the law. (Lawful)",
-        "Freedom. Tyrants must not be allowed to oppress the people. (Chaotic)",
-        "Might. If I become strong, I can take what I want—what I deserve. (Evil)",
-        "Sincerity. There's no good in pretending to be something I'm not. (Neutral)",
-        "Destiny. Nothing and no one can steer me away from my higher calling. (Any)"
+        { "ideal": "Respect. People deserve to be treated with dignity and respect.", "alignments": ["CG", "NG", "LG"]},
+        { "ideal": "Fairness. No one should get preferential treatment before the law, and no one is above the law.", "alignments": ["LG", "LN", "LE"]},
+        { "ideal": "Freedom. Tyrants must not be allowed to oppress the people.", "alignments": ["CG", "CN", "CE"]},
+        { "ideal": "Might. If I become strong, I can take what I want—what I deserve.", "alignments": ["CE", "NE", "LE"]},
+        { "ideal": "Sincerity. There's no good in pretending to be something I'm not.", "alignments": ["LN", "CN", "TN"]},
+        { "ideal": "Destiny. Nothing and no one can steer me away from my higher calling.", "alignments": []}
       ],
       "bonds": [
         "I have a family, but I have no idea where they are. One day, I hope to see them again.",
@@ -296,12 +394,12 @@
         "I'm well known for my work, and I want to make sure everyone appreciates it. I'm always taken aback when people haven't heard of me."
       ],
       "ideals": [
-        "Community. It is the duty of all civilized people to strengthen the bonds of community and the security of civilization. (Lawful)",
-        "Generosity. My talents were given to me so that I could use them to benefit the world. (Good)",
-        "Freedom. Everyone should be free to pursue his or her own livelihood. (Chaotic)",
-        "Greed. I'm only in it for the money. (Evil)",
-        "People. I'm committed to the people I care about, not to ideals. (Neutral)",
-        "Aspiration. I work hard to be the best there is at my craft."
+        { "ideal": "Community. It is the duty of all civilized people to strengthen the bonds of community and the security of civilization.", "alignments": ["LG", "LN", "LE"]},
+        { "ideal": "Generosity. My talents were given to me so that I could use them to benefit the world.", "alignments": ["CG", "NG", "LG"]},
+        { "ideal": "Freedom. Everyone should be free to pursue his or her own livelihood.", "alignments": ["CG", "CN", "CE"]},
+        { "ideal": "Greed. I'm only in it for the money.", "alignments": ["CE", "NE", "LE"]},
+        { "ideal": "People. I'm committed to the people I care about, not to ideals.", "alignments": ["LN", "CN", "TN"]},
+        { "ideal": "Aspiration. I work hard to be the best there is at my craft.", "alignments": []}
       ],
       "bonds": [
         "The workshop where I learned my trade is the most important place in the world to me.",
@@ -365,12 +463,12 @@
         "I am working on a grand philosophical theory and love sharing my ideas."
       ],
       "ideals": [
-        "Greater Good. My gifts are meant to be shared with all, not used for my own benefit. (Good)",
-        "Logic. Emotions must not cloud our sense of what is right and true, or our logical thinking. (Lawful)",
-        "Free Thinking. Inquiry and curiosity are the pillars of progress. (Chaotic)",
-        "Power. Solitude and contemplation are paths toward mystical or magical power. (Evil)",
-        "Live and Let Live. Meddling in the affairs of others only causes trouble. (Neutral)",
-        "Self-Knowledge. If you know yourself, there's nothing left to know. (Any)"
+        { "ideal": "Greater Good. My gifts are meant to be shared with all, not used for my own benefit.", "alignments": ["CG", "NG", "LG"]},
+        { "ideal": "Logic. Emotions must not cloud our sense of what is right and true, or our logical thinking.", "alignments": ["LG", "LN", "LE"]},
+        { "ideal": "Free Thinking. Inquiry and curiosity are the pillars of progress.", "alignments": ["CG", "CN", "CE"]},
+        { "ideal": "Power. Solitude and contemplation are paths toward mystical or magical power.", "alignments": ["CE", "NE", "LE"]},
+        { "ideal": "Live and Let Live. Meddling in the affairs of others only causes trouble.", "alignments": ["LN", "CN", "TN"]},
+        { "ideal": "Self-Knowledge. If you know yourself, there's nothing left to know.", "alignments": []}
       ],
       "bonds": [
         "Nothing is more important than the other members of my hermitage, order, or association.",
@@ -422,12 +520,12 @@
         "If you do me an injury, I will crush you, ruin your name, and salt your fields."
       ],
       "ideals": [
-        "Respect. Respect is due to me because of my position, but all people regardless of station deserve to be treated with dignity. (Good)",
-        "Responsibility. It is my duty to respect the authority of those above me, just as those below me must respect mine. (Lawful)",
-        "Independence. I must prove that I can handle myself without the coddling of my family. (Chaotic)",
-        "Power. If I can attain more power, no one will tell me what to do. (Evil)",
-        "Family. Blood runs thicker than water. (Any)",
-        "Noble Obligation. It is my duty to protect and care for the people beneath me. (Good)"
+        { "ideal": "Respect. Respect is due to me because of my position, but all people regardless of station deserve to be treated with dignity.", "alignments": ["CG", "NG", "LG"]},
+        { "ideal": "Responsibility. It is my duty to respect the authority of those above me, just as those below me must respect mine.", "alignments": ["LG", "LN", "LE"]},
+        { "ideal": "Independence. I must prove that I can handle myself without the coddling of my family.", "alignments": ["CG", "CN", "CE"]},
+        { "ideal": "Power. If I can attain more power, no one will tell me what to do.", "alignments": ["CE", "NE", "LE"]},
+        { "ideal": "Family. Blood runs thicker than water.", "alignments": []},
+        { "ideal": "Noble Obligation. It is my duty to protect and care for the people beneath me.", "alignments": ["CG", "NG", "LG"]}
       ],
       "bonds": [
         "I will face any challenge to win the approval of my family.",
@@ -467,12 +565,12 @@
         "I was, in fact, raised by wolves."
       ],
       "ideals": [
-        "Change. Life is like the seasons, in constant change, and we must change with it. (Chaotic)",
-        "Greater Good. It is each person's responsibility to make the most happiness for the whole tribe. (Good)",
-        "Honor. If I dishonor myself, I dishonor my whole clan. (Lawful)",
-        "Might. The strongest are meant to rule. (Evil)",
-        "Nature. The natural world is more important than ali the constructs of civilization. (Neutral)",
-        "Glory. I must earn glory in battle, for myself and my clan. (Any)"
+        { "ideal": "Change. Life is like the seasons, in constant change, and we must change with it.", "alignments": ["CG", "CN", "CE"]},
+        { "ideal": "Greater Good. It is each person's responsibility to make the most happiness for the whole tribe.", "alignments": ["CG", "NG", "LG"]},
+        { "ideal": "Honor. If I dishonor myself, I dishonor my whole clan.", "alignments": ["LG", "LN", "LE"]},
+        { "ideal": "Might. The strongest are meant to rule.", "alignments": ["CE", "NE", "LE"]},
+        { "ideal": "Nature. The natural world is more important than ali the constructs of civilization.", "alignments": ["LN", "CN", "TN"]},
+        { "ideal": "Glory. I must earn glory in battle, for myself and my clan.", "alignments": []}
       ],
       "bonds": [
         "My family, clan, or tribe is the most important thing in my life, even when they are far from me.",
@@ -526,12 +624,12 @@
         "I'm convinced that people are always trying to steal my secrets."
       ],
       "ideals": [
-        "Knowledge. The path to power and self-improvement is through knowledge. (Neutral)",
-        "Beauty. What is beautiful points us beyond itself toward what is true. (Good)",
-        "Logic. Emotions must not cloud our logical thinking. (Lawful)",
-        "No Limits. Nothing should fetter the infinite possibility inherent in all existence. (Chaotic)",
-        "Power. Knowledge is the path to power and domination. (Evil)",
-        "Self-Improvement. The goal of a life of study is the betterment of oneself. (Any)"
+        { "ideal": "Knowledge. The path to power and self-improvement is through knowledge.", "alignments": ["LN", "CN", "TN"]},
+        { "ideal": "Beauty. What is beautiful points us beyond itself toward what is true.", "alignments": ["CG", "NG", "LG"]},
+        { "ideal": "Logic. Emotions must not cloud our logical thinking.", "alignments": ["LG", "LN", "LE"]},
+        { "ideal": "No Limits. Nothing should fetter the infinite possibility inherent in all existence.", "alignments": ["CG", "CN", "CE"]},
+        { "ideal": "Power. Knowledge is the path to power and domination.", "alignments": ["CE", "NE", "LE"]},
+        { "ideal": "Self-Improvement. The goal of a life of study is the betterment of oneself.", "alignments": []}
       ],
       "bonds": [
         "It is my duty to protect my students.",
@@ -583,12 +681,12 @@
         "I like a job well done, especially if I can convince someone else to do it."
       ],
       "ideals": [
-        "Respect. The thing that keeps a ship together is mutual respect between captain and crew. (Good)",
-        "Fairness. We all do the work, so we all share in the rewards. (Lawful)",
-        "Freedom. The sea is freedom-the freedom to go anywhere and do anything. (Chaotic)",
-        "Mastery. I'm a predator, and the other ships on the sea are my prey. (Evil)",
-        "People. I'm committed to my crewmates, not to ideals. (Neutral)",
-        "Aspiration. Someday I'll own my own ship and chart my own destiny. (Any)"
+        { "ideal": "Respect. The thing that keeps a ship together is mutual respect between captain and crew.", "alignments": ["CG", "NG", "LG"]},
+        { "ideal": "Fairness. We all do the work, so we all share in the rewards.", "alignments": ["LG", "LN", "LE"]},
+        { "ideal": "Freedom. The sea is freedom-the freedom to go anywhere and do anything.", "alignments": ["CG", "CN", "CE"]},
+        { "ideal": "Mastery. I'm a predator, and the other ships on the sea are my prey.", "alignments": ["CE", "NE", "LE"]},
+        { "ideal": "People. I'm committed to my crewmates, not to ideals.", "alignments": ["LN", "CN", "TN"]},
+        { "ideal": "Aspiration. Someday I'll own my own ship and chart my own destiny.", "alignments": []}
       ],
       "bonds": [
         "I'm loyal to my captain first, everything else second.",
@@ -628,12 +726,12 @@
         "I face problems head-on. A simple, direct solution is the best path to success."
       ],
       "ideals": [
-        "Greater Good. Our lot is to lay down our lives in defense of others. (Good)",
-        "Responsibility. I do what I must and obey just authority. (Lawful)",
-        "Independence. When people follow orders blindly, they embrace a kind of tyranny. (Chaotic)",
-        "Might. In life as in war, the stronger force wins. (Evil)",
-        "Live and Let Live. Ideals aren't worth killing over or going to war for. (Neutral)",
-        "Nation. My city, nation, or people are all that matter. (Any)"
+        { "ideal": "Greater Good. Our lot is to lay down our lives in defense of others.", "alignments": ["CG", "NG", "LG"]},
+        { "ideal": "Responsibility. I do what I must and obey just authority.", "alignments": ["LG", "LN", "LE"]},
+        { "ideal": "Independence. When people follow orders blindly, they embrace a kind of tyranny.", "alignments": ["CG", "CN", "CE"]},
+        { "ideal": "Might. In life as in war, the stronger force wins.", "alignments": ["CE", "NE", "LE"]},
+        { "ideal": "Live and Let Live. Ideals aren't worth killing over or going to war for.", "alignments": ["LN", "CN", "TN"]},
+        { "ideal": "Nation. My city, nation, or people are all that matter.", "alignments": []}
       ],
       "bonds": [
         "I would still lay down my life for the people I served with.",
@@ -685,12 +783,12 @@
         "I bluntly say what other people are hinting at or hiding."
       ],
       "ideals": [
-        "Respect. Ali people, rich ar poor, deserve respect. (Good)",
-        "Community. We have to take care of each other, because no one else is going to do it. (Lawful)",
-        "Change. The low are lifted up, and the high and mighty are brought down. Change is the nature of things. (Chaotic)",
-        "Retribution. The rich need to be shown what life and death are like in the gutters. (Evil)",
-        "People. I help the people who help me-that's what keeps us alive. (Neutral)",
-        "Aspiration. I'm going to prove that I'm worthy of a better life."
+        { "ideal": "Respect. All people, rich and poor, deserve respect.", "alignments": ["CG", "NG", "LG"]},
+        { "ideal": "Community. We have to take care of each other, because no one else is going to do it.", "alignments": ["LG", "LN", "LE"]},
+        { "ideal": "Change. The low are lifted up, and the high and mighty are brought down. Change is the nature of things.", "alignments": ["CG", "CN", "CE"]},
+        { "ideal": "Retribution. The rich need to be shown what life and death are like in the gutters.", "alignments": ["CE", "NE", "LE"]},
+        { "ideal": "People. I help the people who help me-that's what keeps us alive.", "alignments": ["LN", "CN", "TN"]},
+        { "ideal": "Aspiration. I'm going to prove that I'm worthy of a better life.", "alignments": []}
       ],
       "bonds": [
         "My town or city is my home, and I'll fight to defend it.",

@@ -11,8 +11,10 @@ module.exports = {
   trait: function (background) {
     return random.element(background.traits || []);
   },
-  ideal: function (background) {
-    return random.element(background.ideals || []);
+  ideal: function (background, alignment) {
+    const ideals = background.ideals.filter(i => i.alignments.length === 0 || i.alignments.includes(alignment.abbreviation));
+    console.log(ideals);
+    return random.element(ideals);
   },
   bond: function (background) {
     return random.element(background.bonds || []);

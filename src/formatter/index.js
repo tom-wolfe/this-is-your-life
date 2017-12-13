@@ -5,7 +5,7 @@ module.exports = function (character) {
 
   const raceName = character.subrace ? character.subrace.name : character.race.name;
 
-  output += `<p>You are a ${character.age} year old ${character.alignment.toLowerCase()} ${raceName.toLowerCase()} ${character.background.name.toLowerCase()} adventuring as a ${character.class.name.toLowerCase()}.</p>\n`;
+  output += `<p>You are a ${character.age} year old ${character.alignment.name.toLowerCase()} ${raceName.toLowerCase()} ${character.background.name.toLowerCase()} adventuring as a ${character.class.name.toLowerCase()}.</p>\n`;
 
   output += '<p>';
   if (character.backgroundReason) {
@@ -22,7 +22,7 @@ module.exports = function (character) {
   output += `<h3>Background (${character.background.name})</h3>\n\n`;
   output += '<p>';
   output += `<strong>Trait:</strong> ${character.backgroundTrait}<br>\n`;
-  output += `<strong>Ideal:</strong> ${character.backgroundIdeal}<br>\n`;
+  output += `<strong>Ideal:</strong> ${character.backgroundIdeal.ideal}<br>\n`;
   output += `<strong>Bond:</strong> ${character.backgroundBond}<br>\n`;
   output += `<strong>Flaw:</strong> ${character.backgroundFlaw}<br>\n`;
   output += character.backgroundOther.map(o => `<strong>${o.name}:</strong> ${o.value}`).join('<br>\n') + '</p>\n\n';

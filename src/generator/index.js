@@ -36,7 +36,7 @@ function background(character) {
   if (!character.background) { character.background = Background.random(character.sources); }
   character.backgroundReason = Background.reason(character.background);
   character.backgroundTrait = Background.trait(character.background);
-  character.backgroundIdeal = Background.ideal(character.background);
+  character.backgroundIdeal = Background.ideal(character.background, character.alignment);
   character.backgroundBond = Background.bond(character.background);
   character.backgroundFlaw = Background.flaw(character.background);
   character.backgroundOther = Background.other(character.background);
