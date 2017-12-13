@@ -569,7 +569,7 @@
         { "ideal": "Greater Good. It is each person's responsibility to make the most happiness for the whole tribe.", "alignments": ["CG", "NG", "LG"]},
         { "ideal": "Honor. If I dishonor myself, I dishonor my whole clan.", "alignments": ["LG", "LN", "LE"]},
         { "ideal": "Might. The strongest are meant to rule.", "alignments": ["CE", "NE", "LE"]},
-        { "ideal": "Nature. The natural world is more important than ali the constructs of civilization.", "alignments": ["LN", "CN", "TN"]},
+        { "ideal": "Nature. The natural world is more important than all the constructs of civilization.", "alignments": ["LN", "CN", "TN"]},
         { "ideal": "Glory. I must earn glory in battle, for myself and my clan.", "alignments": []}
       ],
       "bonds": [

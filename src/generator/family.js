@@ -65,7 +65,7 @@ module.exports = {
         case r < 2: return { name: 'nobody', absent: ['mother', 'father'] };
         case r < 3: return { name: 'an institution, such as an asylum', absent: ['mother', 'father'] };
         case r < 4: return { name: 'a temple', absent: ['mother', 'father'] };
-        case r < 6: return { name: 'an ophanage', absent: ['mother', 'father'] };
+        case r < 6: return { name: 'an orphanage', absent: ['mother', 'father'] };
         case r < 8: return { name: 'a guardian', absent: ['mother', 'father'] };
         case r < 16: return { name: 'your paternal or maternal aunt, uncle, or both; or extended family such as a tribe or clan', absent: ['mother', 'father'] };
         case r < 26: return { name: 'your paternal or maternal grandparent(s)', absent: ['mother', 'father'] };
@@ -79,7 +79,7 @@ module.exports = {
         case r < 6: return { name: 'nobody', absent: ['mother', 'father'] };
         case r < 11: return { name: 'an institution, such as an asylum', absent: ['mother', 'father'] };
         case r < 16: return { name: 'a temple', absent: ['mother', 'father'] };
-        case r < 21: return { name: 'an ophanage', absent: ['mother', 'father'] };
+        case r < 21: return { name: 'an orphanage', absent: ['mother', 'father'] };
         case r < 31: return { name: 'a guardian', absent: ['mother', 'father'] };
         case r < 51: return { name: 'your paternal or maternal aunt, uncle, or both; or extended family such as a tribe or clan', absent: ['mother', 'father'] };
         case r < 81: return { name: 'your paternal or maternal grandparent(s)', absent: ['mother', 'father'] };

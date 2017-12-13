@@ -65,7 +65,7 @@ function crime() {
   }
 }
 
-function posessedCreature() {
+function possessedCreature() {
   switch (random.dice('1d6')) {
     case 1: return 'celestial';
     case 2: return 'devil';
@@ -98,7 +98,7 @@ function supernatural() {
     case r < 51: return 'You escaped certain death and believe it was the intervention of a god that saved you.';
     case r < 61: return 'You witnessed a minor miracle.';
     case r < 71: return 'You explored an empty house and found it to be haunted.'
-    case r < 76: return `You were briefly possessed by a ${posessedCreature()}.`
+    case r < 76: return `You were briefly possessed by a ${possessedCreature()}.`
     case r < 81: return 'You saw a ghost.';
     case r < 86: return 'You saw a ghoul feeding on a corpse.';
     case r < 91: return 'A celestial or a fiend visited you in your dreams to give a warning of dangers to come.';
