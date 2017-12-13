@@ -1,73 +1,28 @@
 const random = require('./random');
 const Life = require('./life');
 
-const halfRaces = {
-  'Half-Elf': halfElf,
-  'Half-Orc': halfOrc,
-  'Tiefling': tiefling,
-  'Air Genasi': () => ['Human', 'Djinn'],
-  'Fire Genasi': () => ['Human', 'Efreet'],
-  'Water Genasi': () => ['Human', 'Marid'],
-  'Earth Genasi': () => ['Human', 'Dao'],
-  'Fallen Aasimar': aasimar,
-  'Scourge Aasimar': aasimar,
-  'Protector Aasimar': aasimar,
-}
-
-function aasimar () {
-  const r = random.dice('1d8');
-  switch (true) {
-    case r < 5: return ['Human', 'Human'];
-    case r < 6: return ['Aasimar', 'Human'];
-    case r < 7: return ['Aasimar', 'Aasimar'];
-    case r < 8: return ['Celestial', 'Human'];
-    case r === 8: return ['Aasimar', 'Celestial']
-  }
-}
-
-function halfElf () {
-  const r = random.dice('1d8');
-  switch (true) {
-    case r < 6: return ['Elf', 'Human'];
-    case r === 6: return ['Elf', 'Half-Elf'];
-    case r === 7: return ['Human', 'Half-Elf']
-    case r === 8: return ['Half-Elf', 'Half-Elf']
-  }
-}
-
-function halfOrc () {
-  const r = random.dice('1d8');
-  switch (true) {
-    case r < 4: return ['Orc', 'Human'];
-    case r < 6: return ['Orc', 'Half-Orc'];
-    case r < 8: return ['Human', 'Half-Orc'];
-    case r === 8: return ['Half-Orc', 'Half-Orc']
-  }
-}
-
-function tiefling () {
-  const r = random.dice('1d8');
-  switch (true) {
-    case r < 5: return ['Human', 'Human'];
-    case r < 7: return ['Tiefling', 'Human'];
-    case r < 8: return ['Tiefling', 'Devil'];
-    case r === 8: return ['Human', 'Devil']
-  }
-}
-
 module.exports = {
   knewParents: function () {
     return random.percent() <= 95;
   },
-  parents: function (race) {
-    let options = [race.name, race.name];
-    if (Object.keys(halfRaces).includes(race.name)) {
-      options = halfRaces[race.name]();
+  parents: function (race, subrace) {
+    // Figure out which parent options to choose from.
+    let options = [];
+    if (subrace && subrace.parents) {
+      options.push(...subrace.parents);
+    } else if (race.parents) {
+      options.push(...race.parents);
+    } else {
+      options.push({ chance: 100, parent1: race.name, parent2: race.name });
     }
 
     // 50/50 chance to switch races.
-    if (random.bool()) { options.reverse(); }
-    return { mother: { race: options[0] }, father: { race: options[1] } };
+    const { parent1, parent2 } = random.weightedOption(options);
+    if (random.bool()) {
+      return { mother: { race: parent1 }, father: { race: parent2 } };
+    } else {
+      return { mother: { race: parent2 }, father: { race: parent1 } };
+    }
   },
   absentParent: function () {
     switch (random.dice('1d4')) {

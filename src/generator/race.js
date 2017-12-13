@@ -9,8 +9,17 @@ module.exports = {
   random: function (sources = 'ALL') {
     return random.sourcedElement(races, sources);
   },
-  other: function (race) {
-    if (!race.other) return [];
-    return Object.keys(race.other).map(o => ({ name: o, value: random.element(race.other[o]) }));
+  randomSubrace: function (race) {
+    return random.element(race.subraces);
+  },
+  other: function (race, subrace) {
+    const r = [];
+    if (race.other) {
+      r.push(...Object.keys(race.other).map(o => ({ name: o, value: random.element(race.other[o]) })));
+    }
+    if (subrace && subrace.other) {
+      r.push(...Object.keys(subrace.other).map(o => ({ name: o, value: random.element(subrace.other[o]) })));
+    }
+    return r;
   },
 }

@@ -22,5 +22,15 @@ module.exports = {
   },
   bool: function (percent = 50) {
     return random.bool(percent);
+  },
+  weightedOption: function(options) {
+    const sum = options.map(o => o.chance).reduce((p, c) => p + c, 0);
+    const result = random.integer(1, sum);
+    let counter = 0, index = 0, option;
+    while (counter < result) {
+      option = options[index++];
+      counter += option.chance;
+    }
+    return option;
   }
 }

@@ -3,7 +3,9 @@ module.exports = function (character) {
 
   output += '\n<h3>Overview</h3>\n\n';
 
-  output += `<p>You are a ${character.age} year old ${character.alignment.toLowerCase()} ${character.race.name.toLowerCase()} ${character.background.name.toLowerCase()} adventuring as a ${character.class.name.toLowerCase()}.</p>\n`;
+  const raceName = character.subrace ? character.subrace.name : character.race.name;
+
+  output += `<p>You are a ${character.age} year old ${character.alignment.toLowerCase()} ${raceName.toLowerCase()} ${character.background.name.toLowerCase()} adventuring as a ${character.class.name.toLowerCase()}.</p>\n`;
 
   output += '<p>';
   if (character.backgroundReason) {
@@ -13,7 +15,7 @@ module.exports = function (character) {
   output += '</p>\n\n';
 
   if (character.raceOther.length > 0) {
-    output += `<h3>Racial (${character.race.name})</h3>\n\n`;
+    output += `<h3>Racial (${raceName})</h3>\n\n`;
     output += '<p>' + character.raceOther.map(o => `<strong>${o.name}:</strong> ${o.value}`).join('<br>\n') + '</p>\n\n';
   }
 
@@ -29,7 +31,7 @@ module.exports = function (character) {
   if (character.classOther.length > 0) {
     output += `<h3>Class (${character.class.name})</h3>\n\n`;
     output += '<p>' + character.classOther.map(o => `<strong>${o.name}:</strong> ${o.value}`).join('<br>\n') + '</p>\n\n';
-  }  
+  }
 
   output += '<h3>Family</h3>\n\n';
 
@@ -40,7 +42,7 @@ module.exports = function (character) {
     if (mother.race === father.race) {
       output += `<p>Your mother and father are both ${mother.race.toLowerCase()}s. Your mother ${mother.occupation}, while your father ${father.occupation}.<p>`;
     } else {
-      output += `<p>Your mother is ${mother.race.toLowerCase()} and ${mother.occupation}, but your father is ${father.race.toLowerCase()} and ${father.occupation}.</p>`;
+      output += `<p>Your mother is a ${mother.race.toLowerCase()} and ${mother.occupation}, but your father is a ${father.race.toLowerCase()} and ${father.occupation}.</p>`;
     }
   }
 

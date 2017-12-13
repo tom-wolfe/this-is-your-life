@@ -6,7 +6,7 @@ const Birth = require('./birth');
 const Life = require('./life');
 const Item = require('./item');
 
-function sources (character) {
+function sources(character) {
   if (character.sources) {
     character.sources = character.sources.split(',').map(s => s.trim());
   } else {
@@ -14,21 +14,24 @@ function sources (character) {
   }
 }
 
-function race (character) {
+function race(character) {
   if (character.race) { character.race = Race.byName(character.race); }
   if (!character.race) { character.race = Race.random(character.sources); }
-  character.raceOther = Race.other(character.race);
+
+  if (character.race.subraces.length > 0) { character.subrace = Race.randomSubrace(character.race); }
+
+  character.raceOther = Race.other(character.race, character.subrace);
 }
 
-function alignment (character) {
+function alignment(character) {
   if (!character.alignment) { character.alignment = Life.alignment(); }
 }
 
-function age (character) {
+function age(character) {
   character.age = Number(character.age) || Life.age();
 }
 
-function background (character) {
+function background(character) {
   if (character.background) { character.background = Background.byName(character.background); }
   if (!character.background) { character.background = Background.random(character.sources); }
   character.backgroundReason = Background.reason(character.background);
@@ -39,21 +42,21 @@ function background (character) {
   character.backgroundOther = Background.other(character.background);
 }
 
-function adventuringClass (character) {
+function adventuringClass(character) {
   if (character.class) { character.class = Class.byName(character.class); }
   if (!character.class) { character.class = Class.random(character.sources); }
   character.classReason = Class.reason(character.class);
   character.classOther = Class.other(character.class);
 }
 
-function parents (character) {
+function parents(character) {
   character.knewParents = Family.knewParents();
   character.parents = Family.parents(character.race);
   character.parents.mother.occupation = Life.occupation();
   character.parents.father.occupation = Life.occupation();
 }
 
-function upbringing (character) {
+function upbringing(character) {
   character.birthplace = Birth.place();
   character.raisedBy = Family.raisedBy(character.knewParents);
   character.lifestyle = Family.lifestyle();
@@ -68,7 +71,7 @@ function upbringing (character) {
   }
 }
 
-function siblings (character) {
+function siblings(character) {
   character.siblings = [];
   for (n = 0; n < Family.siblings(character.race); n++) {
     character.siblings.push({
@@ -81,7 +84,7 @@ function siblings (character) {
   }
 }
 
-function events (character) {
+function events(character) {
   character.events = [];
   const eventRolls = [];
   for (n = 0; n < Life.eventCount(character.age); n++) {
@@ -89,7 +92,7 @@ function events (character) {
   }
 }
 
-function trinket (character) {
+function trinket(character) {
   character.trinket = Item.trinket();
 }
 

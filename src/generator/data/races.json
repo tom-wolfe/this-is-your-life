@@ -7,10 +7,46 @@
     {
       "name": "Genasi",
       "subraces": [
-        "Fire Genasi",
-        "Water Genasi",
-        "Earth Genasi",
-        "Goliath Genasi"
+        {
+          "name": "Air Genasi",
+          "parents": [
+            {
+              "chance": 100,
+              "parent1": "Human",
+              "parent2": "Djinn"
+            }
+          ]
+        },
+        {
+          "name": "Fire Genasi",
+          "parents": [
+            {
+              "chance": 100,
+              "parent1": "Human",
+              "parent2": "Efreet"
+            }
+          ]
+        },
+        {
+          "name": "Water Genasi",
+          "parents": [
+            {
+              "chance": 100,
+              "parent1": "Human",
+              "parent2": "Marid"
+            }
+          ]
+        },
+        {
+          "name": "Earth Genasi",
+          "parents": [
+            {
+              "chance": 100,
+              "parent1": "Human",
+              "parent2": "Dao"
+            }
+          ]
+        }
       ]
     },
     {
@@ -22,9 +58,32 @@
     {
       "name": "Aasimar",
       "subraces": [
-        "Scourge Aasimar",
-        "Protector Aasimar",
-        "Fallen Aasimar"
+        {
+          "name": "Scourge Aasimar"
+        },
+        {
+          "name": "Protector Aasimar"
+        },
+        {
+          "name": "Fallen Aasimar"
+        }
+      ],
+      "parents": [
+        {
+          "chance": 60,
+          "parent1": "Human",
+          "parent2": "Human"
+        },
+        {
+          "chance": 25,
+          "parent1": "Aasimar",
+          "parent2": "Human"
+        },
+        {
+          "chance": 15,
+          "parent1": "Aasimar",
+          "parent2": "Aasimar"
+        }
       ],
       "other": {
         "Angelic Guide": [
@@ -84,12 +143,24 @@
     {
       "name": "Monster",
       "subraces": [
-        "Bugbear",
-        "Goblin",
-        "Hobgoblin",
-        "Kobold",
-        "Orc",
-        "Yuan-ti Pureblood"
+        {
+          "name": "Bugbear"
+        },
+        {
+          "name": "Goblin"
+        },
+        {
+          "name": "Hobgoblin"
+        },
+        {
+          "name": "Kobold"
+        },
+        {
+          "name": "Orc"
+        },
+        {
+          "name": "Yuan-ti Pureblood"
+        }
       ],
       "other": {
         "Origin": [
@@ -155,41 +226,107 @@
     {
       "name": "Dwarf",
       "subraces": [
-        "Mountain Dwarf",
-        "Duergar",
-        "Hill Dwarf"
+        {
+          "name": "Mountain Dwarf"
+        },
+        {
+          "name": "Duergar"
+        },
+        {
+          "name": "Hill Dwarf"
+        }
       ]
     },
     {
       "name": "Elf",
       "subraces": [
-        "Wood Elf",
-        "High Elf",
-        "Drow"
+        {
+          "name": "Wood Elf"
+        },
+        {
+          "name": "High Elf"
+        },
+        {
+          "name": "Drow"
+        }
       ]
     },
     {
       "name": "Gnome",
       "subraces": [
-        "Rock Gnome",
-        "Deep Gnome",
-        "Forest Gnome"
+        {
+          "name": "Rock Gnome"
+        },
+        {
+          "name": "Deep Gnome"
+        },
+        {
+          "name": "Forest Gnome"
+        }
       ]
     },
     {
       "name": "Half-Elf",
-      "subraces": []
+      "subraces": [],
+      "parents": [
+        {
+          "chance": 64,
+          "parent1": "Elf",
+          "parent2": "Human"
+        },
+        {
+          "chance": 12,
+          "parent1": "Elf",
+          "parent2": "Half-Elf"
+        },
+        {
+          "chance": 12,
+          "parent1": "Human",
+          "parent2": "Half-Elf"
+        },
+        {
+          "chance": 12,
+          "parent1": "Half-Elf",
+          "parent2": "Half-Elf"
+        }
+      ]
     },
     {
       "name": "Halfling",
       "subraces": [
-        "Stout Halfling",
-        "Light Halfling"
+        {
+          "name": "Stout Halfling"
+        },
+        {
+          "name": "Light Halfling"
+        }
       ]
     },
     {
       "name": "Half-Orc",
-      "subraces": []
+      "subraces": [],
+      "parents": [
+        {
+          "chance": 40,
+          "parent1": "Orc",
+          "parent2": "Human"
+        },
+        {
+          "chance": 24,
+          "parent1": "Orc",
+          "parent2": "Half-Orc"
+        },
+        {
+          "chance": 24,
+          "parent1": "Human",
+          "parent2": "Half-Orc"
+        },
+        {
+          "chance": 12,
+          "parent1": "Half-Orc",
+          "parent2": "Half-Orc"
+        }
+      ]
     },
     {
       "name": "Human",
@@ -197,7 +334,29 @@
     },
     {
       "name": "Tiefling",
-      "subraces": []
+      "subraces": [],
+      "parents": [
+        {
+          "chance": 52,
+          "parent1": "Human",
+          "parent2": "Human"
+        },
+        {
+          "chance": 24,
+          "parent1": "Tiefling",
+          "parent2": "Human"
+        },
+        {
+          "chance": 12,
+          "parent1": "Tiefling",
+          "parent2": "Devil"
+        },
+        {
+          "chance": 12,
+          "parent1": "Human",
+          "parent2": "Devil"
+        }
+      ]
     }
   ]
 }
