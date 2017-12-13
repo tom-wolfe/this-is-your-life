@@ -21,10 +21,39 @@
         <p>
           This is a simple generator that automates the process of rolling on all the character generation tables that can be found
           in the Dungeons &amp; Dragons 5th Edition Player Handbook, Volo's Guide to Monsters, and Xanathar's Guide to Everything.
-          Click the button below to create a character!</p>
+          Click the button below to create a character!
+        </p>
+        <div class="row">
+          <div class="col-md-3 col-sm-4">
+            <div class="form-group">
+              <label for="race">Race</label>
+              <select class="form-control" id="race">
+                <option value="" selected>Any</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4">
+            <div class="form-group">
+              <label for="class">Class</label>
+              <select class="form-control" id="class">
+                <option value="" selected>Any</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4">
+            <div class="form-group">
+              <label for="background">Background</label>
+              <select class="form-control" id="background">
+                <option value="" selected>Any</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
           <a id="generate" href="#" class="btn btn-primary" role="button">Roll again!
             <i class="fa fa-chevron-right"></i>
           </a>
+        </div>
       </div>
     </div>
     <div class="container">
