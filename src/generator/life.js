@@ -117,8 +117,8 @@ function tragedy() {
     case 8: return 'A terrible blight in your home community caused crops to fail, and many starved. You lost a sibling or some other family member.';
     case 9: return 'You did something that brought terrible shame to you in the eyes of your family. You might have been involved in a scandal, dabbled in dark magic, or offended someone important. The attitude of your family members toward you becomes indifferent at best, though they might eventually forgive you.';
     case 10: return 'For a reason you were never told, you were exiled from your community. You then either wandered in the wilderness for a time or promptly found a new place to live.';
-    case 11: return 'A romantic relationship ended. ' + ((random.dice('1d6') % 2 === 0) ? 'with bad feelings.' : 'but it was amicable.');
-    case 12: return `A current or prospective romantic partner of yours died. Cause of death: ${causeOfDeath()}.` + (random.dice('1d12') === 1 ? ' It was your fault.' : '');
+    case 11: return 'A romantic relationship ended. ' + (random.bool() ? 'with bad feelings.' : 'but it was amicable.');
+    case 12: return `A current or prospective romantic partner of yours died. Cause of death: ${causeOfDeath()}.` + (random.bool(8) ? ' It was your fault.' : '');
   }
 }
 
@@ -193,7 +193,7 @@ function event(previous) {
     case r < 11: return tragedy();
     case r < 21: return boon();
     case r < 31: return (previous.filter(n => n < 31 && n >= 21).length > 1) ? 'You had a child.' : 'You fell in love or got married.';
-    case r < 41: return `You made an enemy of an adventuring ${Class.random().name} ` + ((random.dice('1d6') % 2 === 0) ? 'but it wasn\'t your fault.' : 'and it was your fault.');
+    case r < 41: return `You made an enemy of an adventuring ${Class.random().name} ` + (random.bool() ? 'but it wasn\'t your fault.' : 'and it was your fault.');
     case r < 51: return `You made a friend of an adventuring ${Class.random().name}.`;
     case r < 71: return `You spent time working in a job related to your background. Start the game with an extra ${random.dice('2d6')} gp.`;
     case r < 76: return 'You met someone important.';
@@ -232,13 +232,13 @@ function occupation() {
 function alignment() {
   const r = random.dice('3d6');
   switch (true) {
-    case r < 4: return (random.percent() > 50) ? 'Chaotic Evil' : 'Chaotic Neutral';
+    case r < 4: return (random.bool()) ? 'Chaotic Evil' : 'Chaotic Neutral';
     case r < 6: return 'Lawful Evil';
     case r < 9: return 'Neutral Evil';
     case r < 13: return 'Neutral';
     case r < 16: return 'Neutral Good';
-    case r < 18: return (random.percent() > 50) ? 'Lawful Good' : 'Lawful Neutral';
-    case r < 19: return (random.percent() > 50) ? 'Chaotic Good' : 'Chaotic Neutral';
+    case r < 18: return (random.bool()) ? 'Lawful Good' : 'Lawful Neutral';
+    case r < 19: return (random.bool()) ? 'Chaotic Good' : 'Chaotic Neutral';
   }
 }
 

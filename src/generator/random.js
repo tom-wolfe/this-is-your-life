@@ -1,24 +1,26 @@
 const sources = require('./sources');
 
-function numberBetween(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function element(array) {
-  return array[numberBetween(0, array.length - 1)];
-}
+const Random = require('random-js');
+const random = new Random(Random.engines.mt19937().autoSeed());
 
 module.exports = {
-  numberBetween,
-  element,
+  numberBetween: function (min, max) {
+    return random.integer(min, max);
+  },
+  element: function(d) {
+    return random.pick(d);
+  },
   sourcedElement: function (d, s) {
-    return element(sources.flatData(d, s));
+    return random.pick(sources.flatData(d, s));
   },
   dice: function (roll) {
     const i = roll.toLowerCase().split('d').map(Number);
-    return [...new Array(i[0]).keys()].reduce((p, c) => p + numberBetween(1, i[1]), 0);
+    return random.dice(i[1], i[0]).reduce((p, c) => p + c, 0);
   },
   percent: function () {
-    return numberBetween(1, 100);
+    return random.integer(1, 100);
+  },
+  bool: function (percent = 50) {
+    return random.bool(percent);
   }
 }

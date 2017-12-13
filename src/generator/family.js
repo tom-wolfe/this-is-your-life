@@ -66,7 +66,7 @@ module.exports = {
     }
 
     // 50/50 chance to switch races.
-    if (random.percent() > 50) { options.reverse(); }
+    if (random.bool()) { options.reverse(); }
     return { mother: { race: options[0] }, father: { race: options[1] } };
   },
   absentParent: function () {
@@ -78,7 +78,7 @@ module.exports = {
     }
   },
   siblingSex: function () {
-    return (random.percent() > 50) ? 'brother' : 'sister';
+    return (random.bool()) ? 'brother' : 'sister';
   },
   siblings: function (race) {
     const r = random.dice('1d10');
