@@ -40,7 +40,12 @@ module.exports = function (character) {
     output += '<p>You don\'t know who your parents are.</p>';
   } else {
     if (mother.race === father.race) {
-      output += `<p>Your mother and father are both ${mother.race.toLowerCase()}s. Your mother ${mother.occupation}, while your father ${father.occupation}.<p>`;
+      output += '<p>';
+      if (mother.race !== character.race.name) {
+        output += `Your mother and father are both ${mother.race.toLowerCase()}s. `;
+      }
+      output += `Your mother ${mother.occupation}, while your father ${father.occupation}.`;
+      output += '</p>';
     } else {
       output += `<p>Your mother is a ${mother.race.toLowerCase()} and ${mother.occupation}, but your father is a ${father.race.toLowerCase()} and ${father.occupation}.</p>`;
     }
