@@ -10,7 +10,7 @@ Run `npm i` to install all required dependencies before running the development 
 
 ## Development server
 
-Run `npm run test` for a dev server. Navigate to `http://localhost:8080/`. The app will automatically reload if you change any of the source files.
+Run `npm run start` for a dev server. Navigate to `http://localhost:8080/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 

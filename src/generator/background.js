@@ -12,8 +12,12 @@ module.exports = {
   reason: function (background) {
     return Random.element(background.reasons);
   },
-  trait: function (background) {
-    return Random.element(background.traits || []);
+  traits: function (background) {
+    var trait1 = Random.element(background.traits || []);
+    const filteredTraits = background.traits.filter(i => i !== trait1);
+    var trait2 = Random.element(filteredTraits || []);
+    var traits = [trait1, trait2];
+    return traits;
   },
   ideal: function (background, alignment) {
     const ideals = background.ideals.filter(i => i.alignments.length === 0 || i.alignments.includes(alignment.abbreviation));
