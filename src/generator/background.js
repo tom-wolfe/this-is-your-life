@@ -4,7 +4,7 @@ const Backgrounds = require('./data/backgrounds.json');
 
 module.exports = {
   names: function (sources = 'ALL') {
-    return Sources.flatData(Backgrounds, sources).map(b => b.name);
+    return Sources.flatData(Backgrounds, sources).map(b => b.name).sort();
   },
   byName: function (name) {
     return [].concat.apply([], Object.keys(Backgrounds).map(r => Backgrounds[r])).filter(r => r.name === name)[0];
