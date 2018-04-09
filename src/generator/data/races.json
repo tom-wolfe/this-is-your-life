@@ -141,27 +141,88 @@
       }
     },
     {
-      "name": "Monster",
-      "subraces": [
-        {
-          "name": "Bugbear"
-        },
-        {
-          "name": "Goblin"
-        },
-        {
-          "name": "Hobgoblin"
-        },
-        {
-          "name": "Kobold"
-        },
-        {
-          "name": "Orc"
-        },
-        {
-          "name": "Yuan-ti Pureblood"
-        }
-      ],
+      "name": "Bugbear",
+      "subraces": [],
+      "other": {
+        "Origin": [
+          "You are a spy sent to undermine your enemies from within.",
+          "You are the victim of a curse or polymorph spell.",
+          "You were raised by humans, elves, or dwarves and have adopted their culture.",
+          "At a young age, you adopted a human religion and now serve it faithfully.",
+          "You received divine insight that sent you on your path, and occasionally receive new visions that guide you.",
+          "Your sworn enemy is an ally of your people, forcing you to leave your tribe to gain vengeance.",
+          "An evil entity corrupted your people's society.",
+          "An injury or strange event caused you to lose all memory of your past, but occasional flashes of it return to you."
+        ]
+      }
+    },
+    {
+      "name": "Goblin",
+      "subraces": [],
+      "other": {
+        "Origin": [
+          "You are a spy sent to undermine your enemies from within.",
+          "You are the victim of a curse or polymorph spell.",
+          "You were raised by humans, elves, or dwarves and have adopted their culture.",
+          "At a young age, you adopted a human religion and now serve it faithfully.",
+          "You received divine insight that sent you on your path, and occasionally receive new visions that guide you.",
+          "Your sworn enemy is an ally of your people, forcing you to leave your tribe to gain vengeance.",
+          "An evil entity corrupted your people's society.",
+          "An injury or strange event caused you to lose all memory of your past, but occasional flashes of it return to you."
+        ]
+      }
+    },
+    {
+      "name": "Hobgoblin",
+      "subraces": [],
+      "other": {
+        "Origin": [
+          "You are a spy sent to undermine your enemies from within.",
+          "You are the victim of a curse or polymorph spell.",
+          "You were raised by humans, elves, or dwarves and have adopted their culture.",
+          "At a young age, you adopted a human religion and now serve it faithfully.",
+          "You received divine insight that sent you on your path, and occasionally receive new visions that guide you.",
+          "Your sworn enemy is an ally of your people, forcing you to leave your tribe to gain vengeance.",
+          "An evil entity corrupted your people's society.",
+          "An injury or strange event caused you to lose all memory of your past, but occasional flashes of it return to you."
+        ]
+      }
+    },
+    {
+      "name": "Kobold",
+      "subraces": [],
+      "other": {
+        "Origin": [
+          "You are a spy sent to undermine your enemies from within.",
+          "You are the victim of a curse or polymorph spell.",
+          "You were raised by humans, elves, or dwarves and have adopted their culture.",
+          "At a young age, you adopted a human religion and now serve it faithfully.",
+          "You received divine insight that sent you on your path, and occasionally receive new visions that guide you.",
+          "Your sworn enemy is an ally of your people, forcing you to leave your tribe to gain vengeance.",
+          "An evil entity corrupted your people's society.",
+          "An injury or strange event caused you to lose all memory of your past, but occasional flashes of it return to you."
+        ]
+      }
+    },
+    {
+      "name": "Orc",
+      "subraces": [],
+      "other": {
+        "Origin": [
+          "You are a spy sent to undermine your enemies from within.",
+          "You are the victim of a curse or polymorph spell.",
+          "You were raised by humans, elves, or dwarves and have adopted their culture.",
+          "At a young age, you adopted a human religion and now serve it faithfully.",
+          "You received divine insight that sent you on your path, and occasionally receive new visions that guide you.",
+          "Your sworn enemy is an ally of your people, forcing you to leave your tribe to gain vengeance.",
+          "An evil entity corrupted your people's society.",
+          "An injury or strange event caused you to lose all memory of your past, but occasional flashes of it return to you."
+        ]
+      }
+    },
+    {
+      "name": "Yuan-ti Pureblood",
+      "subraces": [],
       "other": {
         "Origin": [
           "You are a spy sent to undermine your enemies from within.",
@@ -248,7 +309,10 @@
         },
         {
           "name": "Drow"
-        }
+        },
+        {
+          "name": "Eladrin"
+        },
       ]
     },
     {
@@ -267,7 +331,20 @@
     },
     {
       "name": "Half-Elf",
-      "subraces": [],
+      "subraces": [
+        {
+          "name": "Wood Half-Elf"
+        },
+        {
+          "name": "High Half-Elf"
+        },
+        {
+          "name": "Drow Half-Elf"
+        },
+        {
+          "name": "Aquatic Half-Elf"
+        }
+      ],
       "parents": [
         {
           "chance": 64,
@@ -357,6 +434,18 @@
           "parent2": "Devil"
         }
       ]
+    }
+  ],
+  "SCG": [
+    {
+      "name": "Feral Tiefling",
+      "subraces": []
+    }
+  ],
+  "TOA": [
+    {
+      "name": "Tortle",
+      "subraces": []
     }
   ]
 }
