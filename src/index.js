@@ -19,14 +19,24 @@ function generateCharacter(e) {
   return false;
 }
 
+function filterSubraces() {
+  const race = selectedValue('race');
+  const subraces = Race.subraceNames(race);
+  fillDropdown('subrace', subraces);
+}
+
 function fillDropdown(id, source, val, text) {
   const select = document.getElementById(id);
+  select.querySelectorAll('option').forEach(o => {
+    if (o.value) { o.remove(); }
+  });
   source.forEach(c => {
     const o = document.createElement('option');
     o.text = text ? text(c) : c;
     o.value = val ? val(c) : c;
     select.add(o);
   });
+  select.value = '';
 }
 
 function selectedValue(id) {
@@ -42,5 +52,7 @@ function populateDropdowns() {
 }
 
 document.getElementById('generate').addEventListener('click', generateCharacter);
+document.getElementById('race').addEventListener('change', filterSubraces);
+
 generateCharacter();
 populateDropdowns();

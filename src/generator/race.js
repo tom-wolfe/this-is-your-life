@@ -2,13 +2,20 @@ const Random = require('./random');
 const Sources = require('./sources');
 const Races = require('./data/races.json');
 
+function byName(name) {
+  return Sources.flatData(Races, 'ALL').filter(r => r.name === name)[0];
+}
+
 module.exports = {
   names: function (sources = 'ALL') {
     return Sources.flatData(Races, sources).map(r => r.name).sort();
   },
-  byName: function (name) {
-    return [].concat.apply([], Object.keys(Races).map(r => Races[r])).filter(r => r.name === name)[0];
+  subraceNames: function (race) {
+    const r = byName(race);
+    if (!r) { return []; }
+    return r.subraces.map(sr => sr.name).sort();
   },
+  byName,
   random: function (sources = 'ALL') {
     return Random.sourcedElement(Races, sources);
   },
