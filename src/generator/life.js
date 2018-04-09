@@ -231,19 +231,6 @@ function occupation() {
   }
 }
 
-function alignment() {
-  const r = random.dice('3d6');
-  switch (true) {
-    case r < 4: return (random.bool()) ? alignments.CE : alignments.CN;
-    case r < 6: return alignments.LE;
-    case r < 9: return alignments.NE;
-    case r < 13: return alignments.TN;
-    case r < 16: return alignments.NG;
-    case r < 18: return (random.bool()) ? alignments.LG : alignments.LN;
-    case r < 19: return (random.bool()) ? alignments.CG : alignments.CN;
-  }
-}
-
 function relationship() {
   const r = random.dice('3d4');
   switch (true) {
@@ -267,7 +254,6 @@ function status() {
 }
 
 module.exports = {
-  alignment,
   causeOfDeath,
   status,
   relationship,

@@ -1,3 +1,4 @@
+const Alignment = require('./alignment');
 const Class = require('./class');
 const Race = require('./race');
 const Background = require('./background');
@@ -24,7 +25,8 @@ function race(character) {
 }
 
 function alignment(character) {
-  if (!character.alignment) { character.alignment = Life.alignment(); }
+  if (!character.alignment) { character.alignment = Alignment.random(); }
+  if (character.alignment) { character.alignment = Alignment.byAbbreviation(character.alignment); }
 }
 
 function age(character) {
