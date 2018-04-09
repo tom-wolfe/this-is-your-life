@@ -9,6 +9,7 @@ const Race = require('./generator/race');
 function generateCharacter(e) {
   const config = {
     race: selectedValue('race'),
+    subrace: selectedValue('subrace'),
     class: selectedValue('class'),
     background: selectedValue('background'),
     alignment: selectedValue('alignment')
