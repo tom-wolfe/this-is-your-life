@@ -11,13 +11,9 @@
   </p>
 
   {{#if raceOther}}
-  <h3>Racial ({{#if subrace}}{{subrace.name}}{{else}}{{race.name}}{{/if}})</h3>
+    <h3>Racial ({{#if subrace}}{{subrace.name}}{{else}}{{race.name}}{{/if}})</h3>
     <p>{{#each raceOther}}<strong>{{name}}:</strong> {{value}}<br>{{/each}}</p>
   {{/if}}
-
-  <p>You became a acolyte because you ran away from home at an early age and found refuge in a temple.
-    <br> You became a ranger because you have seen what happens when the monsters come out from the dark. You took it upon yourself
-    to become the first line of defense against the evils that lie beyond civilization's borders.</p>
 
   <h3>Background ({{background.name}})</h3>
   <p>
