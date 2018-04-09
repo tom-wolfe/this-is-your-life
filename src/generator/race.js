@@ -4,7 +4,7 @@ const Races = require('./data/races.json');
 
 module.exports = {
   names: function (sources = 'ALL') {
-    return Sources.flatData(Races, sources).map(r => r.name);
+    return Sources.flatData(Races, sources).map(r => r.name).sort();
   },
   byName: function (name) {
     return [].concat.apply([], Object.keys(Races).map(r => Races[r])).filter(r => r.name === name)[0];

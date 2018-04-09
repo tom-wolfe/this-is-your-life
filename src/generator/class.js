@@ -4,7 +4,7 @@ const Classes = require('./data/classes.json');
 
 module.exports = {
   names: function (sources = 'ALL') {
-    return Sources.flatData(Classes, sources).map(c => c.name);
+    return Sources.flatData(Classes, sources).map(c => c.name).sort();
   },
   byName: function (name) {
     return [].concat.apply([], Object.keys(Classes).map(r => Classes[r])).filter(r => r.name === name)[0];
