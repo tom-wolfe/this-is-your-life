@@ -16,7 +16,6 @@ function sources(character) {
 }
 
 function race(character) {
-  console.log(character);
   if (character.race) { character.race = Race.byName(character.race); }
   if (!character.race) { character.race = Race.random(character.sources); }
 
