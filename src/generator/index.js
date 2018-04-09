@@ -16,11 +16,14 @@ function sources(character) {
 }
 
 function race(character) {
+  console.log(character);
   if (character.race) { character.race = Race.byName(character.race); }
   if (!character.race) { character.race = Race.random(character.sources); }
 
-  if (character.race.subraces.length > 0) { character.subrace = Race.randomSubrace(character.race); }
-
+  if (character.race.subraces.length > 0) {
+    if (character.subrace) { character.subrace = character.race.subraces.filter(sr => sr.name === character.subrace)[0]; }
+    if (!character.subrace) { character.subrace = Race.randomSubrace(character.race); }
+  }
   character.raceOther = Race.other(character.race, character.subrace);
 }
 
