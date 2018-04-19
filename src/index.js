@@ -12,7 +12,8 @@ function generateCharacter(e) {
     subrace: selectedValue('subrace'),
     class: selectedValue('class'),
     background: selectedValue('background'),
-    alignment: selectedValue('alignment')
+    alignment: selectedValue('alignment'),
+    age: document.getElementById('age').value
   }
   const character = Generator(config);
   document.getElementById('character').innerHTML = Formatter(character);

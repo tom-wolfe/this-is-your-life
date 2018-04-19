@@ -33,7 +33,9 @@ function alignment(character) {
 }
 
 function age(character) {
-  character.age = Number(character.age) || Life.age();
+  if (!character.age) {
+    character.age = Number(character.age) || Life.age();
+  }
 }
 
 function background(character) {
