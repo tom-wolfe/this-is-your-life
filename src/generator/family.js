@@ -33,7 +33,8 @@ module.exports = {
     }
   },
   siblingSex: function () {
-    return (random.bool()) ? 'brother' : 'sister';
+    // The random.bool() function always returns true, so use percent instead.
+    return (random.percent() <= 50) ? 'brother' : 'sister';
   },
   siblings: function (race) {
     const r = random.dice('1d10');
