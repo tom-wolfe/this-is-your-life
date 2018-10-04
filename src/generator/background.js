@@ -10,7 +10,10 @@ module.exports = {
     return [].concat.apply([], Object.keys(Backgrounds).map(r => Backgrounds[r])).filter(r => r.name === name)[0];
   },
   reason: function (background) {
-    return Random.element(background.reasons);
+    if (background.reasons && background.reasons.length > 0) {
+      return Random.element(background.reasons);
+    }
+    return '...';
   },
   traits: function (background) {
     var trait1 = Random.element(background.traits || []);
