@@ -1,8 +1,8 @@
 import { Generator } from 'tiyl';
-import { Alignments } from 'tiyl/dist/generator/alignment';
-import { Backgrounds } from 'tiyl/dist/generator/background';
-import { Classes } from 'tiyl/dist/generator/class';
-import { Races } from 'tiyl/dist/generator/race';
+import { Alignments } from 'tiyl/generator/alignment';
+import { Backgrounds } from 'tiyl/generator/background';
+import { Classes } from 'tiyl/generator/class';
+import { Races } from 'tiyl/generator/race';
 import Formatter from './formatter';
 
 function generateCharacter(e) {
@@ -15,7 +15,6 @@ function generateCharacter(e) {
     age: document.getElementById('age').value
   }
   const character = new Generator(config).generate();
-  console.log(character);
   document.getElementById('character').innerHTML = Formatter(character);
   if (e) { e.preventDefault(); }
   return false;
@@ -23,7 +22,7 @@ function generateCharacter(e) {
 
 function filterSubraces() {
   const race = selectedValue('race');
-  const subraces = Race.subraceNames(race);
+  const subraces = Races.subraceNames(race);
   fillDropdown('subrace', subraces);
 }
 
