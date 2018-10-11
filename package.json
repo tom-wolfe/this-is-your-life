@@ -31,22 +31,23 @@
   },
   "homepage": "https://github.com/trwolfe13/this-is-your-life#readme",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "css-loader": "^0.28.7",
-    "html-webpack-plugin": "^2.30.1",
-    "jasmine": "^2.8.0",
-    "node-sass": "^4.7.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jasmine": "^3.2.0",
+    "json-loader": "^0.5.7",
+    "node-sass": "^4.9.3",
     "raw-loader": "^0.5.1",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.19.0",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.9.7"
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
   },
   "dependencies": {
-    "handlebars": "^4.0.11",
-    "hoek": "^5.0.3",
-    "random-js": "^1.0.8"
+    "handlebars": "^4.0.12",
+    "tiyl": "^1.1.0"
   }
 }

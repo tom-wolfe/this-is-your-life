@@ -1,10 +1,9 @@
-const Generator = require('./generator');
-const Formatter = require('./formatter');
-
-const Alignment = require('./generator/alignment');
-const Background = require('./generator/background');
-const Class = require('./generator/class');
-const Race = require('./generator/race');
+import { Generator } from 'tiyl';
+import { Alignments } from 'tiyl/dist/generator/alignment';
+import { Backgrounds } from 'tiyl/dist/generator/background';
+import { Classes } from 'tiyl/dist/generator/class';
+import { Races } from 'tiyl/dist/generator/race';
+import Formatter from './formatter';
 
 function generateCharacter(e) {
   const config = {
@@ -15,7 +14,8 @@ function generateCharacter(e) {
     alignment: selectedValue('alignment'),
     age: document.getElementById('age').value
   }
-  const character = Generator(config);
+  const character = new Generator(config).generate();
+  console.log(character);
   document.getElementById('character').innerHTML = Formatter(character);
   if (e) { e.preventDefault(); }
   return false;
@@ -47,10 +47,10 @@ function selectedValue(id) {
 }
 
 function populateDropdowns() {
-  fillDropdown('race', Race.names());
-  fillDropdown('class', Class.names());
-  fillDropdown('alignment', Alignment.all(), a => a.abbreviation, a => a.name);
-  fillDropdown('background', Background.names());
+  fillDropdown('race', Races.names());
+  fillDropdown('class', Classes.names());
+  fillDropdown('alignment', Alignments.all(), a => a.abbreviation, a => a.name);
+  fillDropdown('background', Backgrounds.names());
 }
 
 document.getElementById('generate').addEventListener('click', generateCharacter);

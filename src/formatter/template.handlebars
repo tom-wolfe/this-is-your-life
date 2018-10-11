@@ -1,73 +1,73 @@
 <div id="character">
   <h3>Overview</h3>
 
-  <p>You are a {{age}} year old {{lower alignment.name}} {{#if subrace}}{{lower subrace.name}}{{else}}{{lower race.name}}{{/if}} {{lower background.name}} adventuring as a {{lower class.name}}.</p>
+  <p>You are a {{age}} year old {{lower alignment.name}} {{#if race.subrace}}{{lower race.subrace}}{{else}}{{lower race.name}}{{/if}} {{lower background.name}} adventuring as a {{lower class.name}}.</p>
 
   <p>
-  {{#if backgroundReason}}
-    You became a {{lower background.name}} because {{backgroundReason}}<br>
+  {{#if background.reason}}
+    You became a {{lower background.name}} because {{background.reason}}<br>
   {{/if}}
-  You became a {{lower class.name}} because {{classReason}}
+  You became a {{lower class.name}} because {{class.reason}}
   </p>
 
-  {{#if raceOther}}
-    <h3>Racial ({{#if subrace}}{{subrace.name}}{{else}}{{race.name}}{{/if}})</h3>
-    <p>{{#each raceOther}}<strong>{{name}}:</strong> {{value}}<br>{{/each}}</p>
+  {{#if race.other}}
+    <h3>Racial ({{#if race.subrace}}{{race.subrace}}{{else}}{{race.name}}{{/if}})</h3>
+    <p>{{#each race.other}}<strong>{{name}}:</strong> {{value}}<br>{{/each}}</p>
   {{/if}}
 
   <h3>Background ({{background.name}})</h3>
   <p>
-    <strong>Trait 1:</strong> {{backgroundTraits.[0]}} <br>
-    <strong>Trait 2:</strong> {{backgroundTraits.[1]}} <br>
-    <strong>Ideal:</strong> {{backgroundIdeal.ideal}}<br>
-    <strong>Bond:</strong> {{backgroundBond}}<br>
-    <strong>Flaw:</strong> {{backgroundFlaw}}<br>
-    {{#each backgroundOther}}<strong>{{name}}:</strong> {{value}}<br>{{/each}}
+    <strong>Trait 1:</strong> {{background.traits.[0]}} <br>
+    <strong>Trait 2:</strong> {{background.traits.[1]}} <br>
+    <strong>Ideal:</strong> {{background.ideal}}<br>
+    <strong>Bond:</strong> {{background.bond}}<br>
+    <strong>Flaw:</strong> {{background.flaw}}<br>
+    {{#each background.other}}<strong>{{name}}:</strong> {{value}}<br>{{/each}}
   </p>
 
-  {{#if classOther}}
+  {{#if class.other}}
   <h3>Class ({{class.name}})</h3>
-  <p>{{#each classOther}}<strong>{{name}}:</strong> {{value}}<br>{{/each}}</p>
+  <p>{{#each class.other}}<strong>{{name}}:</strong> {{value}}<br>{{/each}}</p>
   {{/if}}
 
   <h3>Family</h3>
 
-  {{#unless knewParents}}
+  {{#unless family.knewParents}}
   <p>You don't know who your parents are.</p>
   {{else}}
-  {{#compare parents.mother.race parents.father.race}}
+  {{#compare family.parents.mother.race family.parents.father.race}}
   <p>
-    {{#compare parents.mother.race "!==" race.name}} Your mother and father are both {{lower parents.mother.race}}s.{{/compare}}
-    Your mother {{parents.mother.occupation}}, while your father {{parents.father.occupation}}.
+    {{#compare family.parents.mother.race "!==" race.name}} Your mother and father are both {{lower family.parents.mother.race}}s.{{/compare}}
+    Your mother {{family.parents.mother.occupation}}, while your father {{family.parents.father.occupation}}.
   </p>
   {{/compare}}
-  {{#compare parents.mother.race "!==" parents.father.race}}
+  {{#compare family.parents.mother.race "!==" family.parents.father.race}}
   <p>
-    Your mother is a {{lower parents.mother.race}} and {{parents.mother.occupation}}, but your father is a {{lower parents.father.race}}
-    and {{parents.father.occupation}}.
+    Your mother is a {{lower family.parents.mother.race}} and {{family.parents.mother.occupation}}, but your father is a {{lower family.parents.father.race}}
+    and {{family.parents.father.occupation}}.
   </p>
   {{/compare}}
   {{/unless}}
   
-  {{#unless knewParents}}
+  {{#unless family.knewParents}}
   <p>You don't know if you have any siblings.</p>
-  {{else}} {{#unless siblings.length}}
+  {{else}} {{#unless family.siblings.length}}
   <p>You were an only child.</p>
   {{else}}
-  <p>You had {{siblings.length}} siblings.</p>
+  <p>You have {{family.siblings.length}} siblings.</p>
   <ul>
-    {{#each siblings}}
+    {{#each family.siblings}}
     <li>a {{relativeAge}} {{relationship}} who {{occupation}}. They are {{status}} {{attitude}}</li>{{/each}}
   </ul>
   {{/unless}} {{/unless}}
 
   <h3>Upbringing</h3>
-  <p>You were born {{birthplace}}.</p>
-  <p>You were raised by {{raisedBy.name}} and had a {{lower lifestyle.name}} lifestyle, living {{home}}.</p>
+  <p>You were born {{family.birthplace}}.</p>
+  <p>You were raised by {{family.raisedBy.name}} and had a {{lower family.lifestyle.name}} lifestyle, living {{family.home}}.</p>
 
-  {{#if mother.absent}}
-  <p>Your mother ${mother.absent}</p>{{/if}} {{#if father.absent}}
-  <p>Your father ${father.absent}</p>{{/if}}
+  {{#if family.parents.mother.absent}}
+  <p>Your mother {{family.parents.mother.absent}}</p>{{/if}} {{#if family.parents.father.absent}}
+  <p>Your father {{family.parents.father.absent}}</p>{{/if}}
 
   <h3>Life Events ({{events.length}})</h3>
   <ul>
