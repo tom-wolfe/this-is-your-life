@@ -47,7 +47,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "handlebars": "^4.5.3",
+    "handlebars": "^4.7.7",
     "tiyl": "^1.1.4"
   }
 }
