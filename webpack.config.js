@@ -22,7 +22,7 @@ module.exports = {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader'] },
       { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
-      { test: /\.handlebars$/, use: ['raw-loader'] }
+      { test: /\.handlebars$/, type: 'asset/source' }
     ]
   },
   resolve: {
