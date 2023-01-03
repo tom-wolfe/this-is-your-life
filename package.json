@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/trwolfe13/this-is-your-life#readme",
   "devDependencies": {
-    "@babel/core": "^7.1.2",
+    "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.1.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
